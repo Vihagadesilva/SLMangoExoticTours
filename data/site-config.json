@@ -1,0 +1,27 @@
+{
+  "companyName": "SL Mango Exotic Tours",
+  "shortName": "SL Mango Tours",
+  "tagline": "Sri Lanka, Beyond the Ordinary.",
+  "country": "Sri Lanka",
+  "contact": {
+    "phoneDisplay": "+94 77 982 4310",
+    "phoneTel": "+94779824310",
+    "whatsappNumber": "94779824310",
+    "whatsappDisplay": "+94 77 982 4310",
+    "email": "explore@slmangoexotictours.com",
+    "address": "No. 48/2, Temple Road, Colombo & Kandy, Sri Lanka",
+    "operatingHours": "07:00 – 22:00 Sri Lanka Time (UTC +05:30) • 7 Days a Week"
+  },
+  "social": {
+    "whatsapp": "https://wa.me/94779824310",
+    "instagram": "https://instagram.com/slmangoexotictours",
+    "facebook": "https://facebook.com/slmangoexotictours",
+    "tripadvisor": "https://www.tripadvisor.com"
+  },
+  "transparency": {
+    "isDirectTourOperator": true,
+    "governmentRegisteredLicense": "SLTDA / Reg: Pending Verification & Direct Chauffeur Registry",
+    "fleetOwnership": "Dedicated registered executive vehicles with professional licensed chauffeur-guides",
+    "reviewsStatus": "coming_soon"
+  }
+}

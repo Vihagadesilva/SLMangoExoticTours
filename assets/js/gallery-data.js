@@ -1,0 +1,318 @@
+/**
+ * SL MANGO EXOTIC TOURS — CURATED GALLERY DATA
+ * 
+ * Authentic, geographically verified Sri Lankan photography collection.
+ * Categorised by region and theme with verified location names, 
+ * descriptive alt texts, and licensing attribution.
+ */
+
+const GALLERY_DATA = [
+  {
+    id: "gal-01",
+    title: "Sigiriya Lion Rock Citadel",
+    category: "heritage",
+    categoryLabel: "Ancient Heritage",
+    location: "Sigiriya, Central Province",
+    image: "assets/images/destinations/sigiriya.jpg",
+    thumb: "assets/images/destinations/sigiriya.jpg",
+    alt: "Sigiriya Rock Fortress rising dramatically above the central dry zone jungle canopy",
+    caption: "The 5th-century royal sky fortress of King Kashyapa viewed through morning mist.",
+    featured: true
+  },
+  {
+    id: "gal-02",
+    title: "The Nine Arch Bridge Viaduct",
+    category: "highlands",
+    categoryLabel: "Highlands",
+    location: "Ella, Central Highlands",
+    image: "assets/images/destinations/ella.jpg",
+    thumb: "assets/images/destinations/ella.jpg",
+    alt: "The historic Demodara Nine Arch Bridge spanning a lush tea valley near Ella",
+    caption: "Colonial stone engineering hidden deep within the verdant hills of Demodara.",
+    featured: true
+  },
+  {
+    id: "gal-03",
+    title: "Highland Blue Train Journey",
+    category: "experiences",
+    categoryLabel: "Local Experiences",
+    location: "Kandy to Ella Mountain Railway",
+    image: "assets/images/destinations/scenic-train.jpg",
+    thumb: "assets/images/destinations/scenic-train.jpg",
+    alt: "Bright blue passenger train winding through terraced emerald tea hills in Sri Lanka",
+    caption: "The world-famous rail route climbing through misty cloud forests and cascading waterfalls.",
+    featured: true
+  },
+  {
+    id: "gal-04",
+    title: "Wild Sri Lankan Leopard",
+    category: "wildlife",
+    categoryLabel: "Wildlife Safari",
+    location: "Yala National Park",
+    image: "assets/images/destinations/yala.jpg",
+    thumb: "assets/images/destinations/yala.jpg",
+    alt: "Endemic Sri Lankan leopard resting alert in the dry-zone bush of Yala",
+    caption: "Panthera pardus kotiya, the apex predator of the island, camouflaged on a sunlit rock.",
+    featured: true
+  },
+  {
+    id: "gal-05",
+    title: "Galle Fort Lighthouse & Ramparts",
+    category: "coastlines",
+    categoryLabel: "Coastlines",
+    location: "Galle Fort, Southern Province",
+    image: "assets/images/destinations/galle.jpg",
+    thumb: "assets/images/destinations/galle.jpg",
+    alt: "White colonial lighthouse at Galle Fort standing on granite sea ramparts",
+    caption: "17th-century Dutch maritime fortifications meeting the turquoise Indian Ocean.",
+    featured: true
+  },
+  {
+    id: "gal-06",
+    title: "Coconut Tree Hill Promontory",
+    category: "coastlines",
+    categoryLabel: "Coastlines",
+    location: "Mirissa, Southern Province",
+    image: "assets/images/destinations/mirissa.jpg",
+    thumb: "assets/images/destinations/mirissa.jpg",
+    alt: "Tall curved coconut palms atop a red earth bluff overlooking the sea in Mirissa",
+    caption: "Iconic ocean promontory overlooking the breaking surf of Mirissa Bay.",
+    featured: true
+  },
+  {
+    id: "gal-07",
+    title: "Temple of the Sacred Tooth Relic",
+    category: "heritage",
+    categoryLabel: "Ancient Heritage",
+    location: "Kandy, Central Province",
+    image: "assets/images/destinations/kandy.jpg",
+    thumb: "assets/images/destinations/kandy.jpg",
+    alt: "Sri Dalada Maligawa beside Kandy Lake bathed in golden late afternoon light",
+    caption: "The spiritual sanctuary of Theravada Buddhism nestled along the forested lake shore.",
+    featured: false
+  },
+  {
+    id: "gal-08",
+    title: "Nuwara Eliya Tea Terraces",
+    category: "highlands",
+    categoryLabel: "Highlands",
+    location: "Labookellie, Nuwara Eliya",
+    image: "assets/images/destinations/nuwara-eliya.jpg",
+    thumb: "assets/images/destinations/nuwara-eliya.jpg",
+    alt: "Endless rows of manicured green tea bushes clothing the steep highland slopes",
+    caption: "High-grown Ceylon tea estates where the world's most aromatic tea leaves are nurtured.",
+    featured: true
+  },
+  {
+    id: "gal-09",
+    title: "Elephant Herd in Udawalawe",
+    category: "wildlife",
+    categoryLabel: "Wildlife Safari",
+    location: "Udawalawe National Park",
+    image: "assets/images/destinations/udawalawe.jpg",
+    thumb: "assets/images/destinations/udawalawe.jpg",
+    alt: "Wild Asian elephant family grazing peaceably in open savannah grasses",
+    caption: "Gentle giants socialising around the watering holes of the central reservoir.",
+    featured: false
+  },
+  {
+    id: "gal-10",
+    title: "Polonnaruwa Vatadage Circular Shrine",
+    category: "heritage",
+    categoryLabel: "Ancient Heritage",
+    location: "Polonnaruwa Sacred Quadrangle",
+    image: "assets/images/destinations/polonnaruwa.jpg",
+    thumb: "assets/images/destinations/polonnaruwa.jpg",
+    alt: "Carved stone concentric pillars and seated Buddha statues of the Polonnaruwa Vatadage",
+    caption: "12th-century stone masonry built to protect the sacred tooth relic during the medieval era.",
+    featured: false
+  },
+  {
+    id: "gal-11",
+    title: "Dambulla Royal Cave Sanctuary",
+    category: "heritage",
+    categoryLabel: "Ancient Heritage",
+    location: "Dambulla, Central Province",
+    image: "assets/images/destinations/dambulla.jpg",
+    thumb: "assets/images/destinations/dambulla.jpg",
+    alt: "Golden stupa and ancient cave entrance beneath an overhanging granite mountain",
+    caption: "Two millennia of Buddhist devotion preserved in five vast painted cavern sanctuaries.",
+    featured: false
+  },
+  {
+    id: "gal-12",
+    title: "Ruwanwelisaya Great White Stupa",
+    category: "heritage",
+    categoryLabel: "Ancient Heritage",
+    location: "Anuradhapura Sacred City",
+    image: "assets/images/destinations/anuradhapura.jpg",
+    thumb: "assets/images/destinations/anuradhapura.jpg",
+    alt: "Massive whitewashed dome of the Ruwanwelisaya stupa standing under a blue tropical sky",
+    caption: "Built by King Dutugemunu in 140 BC, one of antiquity's tallest monuments.",
+    featured: false
+  },
+  {
+    id: "gal-13",
+    title: "Koneswaram Temple Cliff",
+    category: "coastlines",
+    categoryLabel: "Coastlines",
+    location: "Trincomalee, Eastern Coast",
+    image: "assets/images/destinations/trincomalee.jpg",
+    thumb: "assets/images/destinations/trincomalee.jpg",
+    alt: "Koneswaram Hindu temple overlooking the dramatic sea cliffs of Swami Rock",
+    caption: "Sacred promontory where ancient ceremonies overlook deep marine whale corridors.",
+    featured: false
+  },
+  {
+    id: "gal-14",
+    title: "Traditional Lagoon Catamarans",
+    category: "experiences",
+    categoryLabel: "Local Experiences",
+    location: "Negombo Lagoon",
+    image: "assets/images/gallery/negombo-lagoon.jpg",
+    thumb: "assets/images/gallery/negombo-lagoon.jpg",
+    alt: "Handcrafted outrigger canoes resting on the sandy shores of Negombo lagoon",
+    caption: "Generations of artisanal coastal fishing culture resting at daybreak.",
+    featured: false
+  },
+  {
+    id: "gal-15",
+    title: "Sunrise from Pidurangala Rock",
+    category: "experiences",
+    categoryLabel: "Local Experiences",
+    location: "Sigiriya, Matale District",
+    image: "assets/images/gallery/pidurangala-sunrise.jpg",
+    thumb: "assets/images/gallery/pidurangala-sunrise.jpg",
+    alt: "Panoramic view of Sigiriya Rock rising from the sea of mist at sunrise",
+    caption: "Dawn light washing over the central forests from the ancient monastic summit.",
+    featured: false
+  },
+  {
+    id: "gal-16",
+    title: "Royal Palms of Peradeniya",
+    category: "highlands",
+    categoryLabel: "Highlands",
+    location: "Peradeniya Botanical Gardens",
+    image: "assets/images/gallery/peradeniya-gardens.jpg",
+    thumb: "assets/images/gallery/peradeniya-gardens.jpg",
+    alt: "Stately avenue of royal palm trees in the 147-acre Peradeniya botanical gardens",
+    caption: "Historic botanic sanctuary featuring over 4,000 species of tropical flora.",
+    featured: false
+  },
+  {
+    id: "gal-17",
+    title: "Kandyan Cultural Drummers",
+    category: "experiences",
+    categoryLabel: "Local Experiences",
+    location: "Kandy Cultural Centre",
+    image: "assets/images/gallery/kandyan-dance.jpg",
+    thumb: "assets/images/gallery/kandyan-dance.jpg",
+    alt: "Traditional Kandyan dancers in ornate silver headwear and chest plates",
+    caption: "Centuries-old rhythmic drumming and acrobatic ritual dances of the Hill Country.",
+    featured: false
+  },
+  {
+    id: "gal-18",
+    title: "Ceylon Tea Withering Lofts",
+    category: "highlands",
+    categoryLabel: "Highlands",
+    location: "Pedro Tea Estate, Nuwara Eliya",
+    image: "assets/images/gallery/tea-factory.jpg",
+    thumb: "assets/images/gallery/tea-factory.jpg",
+    alt: "Freshly plucked bright green tea leaves withering on wooden factory racks",
+    caption: "The artisanal orthodox tea crafting process that gives Ceylon tea its world-renowned taste.",
+    featured: false
+  },
+  {
+    id: "gal-19",
+    title: "Ridge Trail of Little Adam's Peak",
+    category: "highlands",
+    categoryLabel: "Highlands",
+    location: "Ella, Uva Province",
+    image: "assets/images/gallery/little-adams-peak.jpg",
+    thumb: "assets/images/gallery/little-adams-peak.jpg",
+    alt: "Winding path along the green ridge crest of Little Adam's Peak overlooking Ella Gap",
+    caption: "A gentle morning hike yielding 360-degree vistas across southern mountain ravines.",
+    featured: false
+  },
+  {
+    id: "gal-20",
+    title: "Cascading Waters of Ravana Falls",
+    category: "highlands",
+    categoryLabel: "Highlands",
+    location: "Ella - Wellawaya Road",
+    image: "assets/images/gallery/ravana-falls.jpg",
+    thumb: "assets/images/gallery/ravana-falls.jpg",
+    alt: "Multi-tiered waterfall tumbling down dark rocky cliffs surrounded by lush foliage",
+    caption: "One of Sri Lanka's widest falls, steeped in the ancient legends of the Ramayana.",
+    featured: false
+  },
+  {
+    id: "gal-21",
+    title: "Yala Safari Expedition",
+    category: "wildlife",
+    categoryLabel: "Wildlife Safari",
+    location: "Yala National Park Block 1",
+    image: "assets/images/gallery/yala-safari-jeep.jpg",
+    thumb: "assets/images/gallery/yala-safari-jeep.jpg",
+    alt: "Customized 4x4 open safari vehicle navigating bush tracks in Yala National Park",
+    caption: "Expert naturalists and trackers scouring the sand tracks for leopard and sloth bear footprints.",
+    featured: false
+  },
+  {
+    id: "gal-22",
+    title: "Sea Turtle Conservation",
+    category: "wildlife",
+    categoryLabel: "Wildlife Safari",
+    location: "Kosgoda, Southern Province",
+    image: "assets/images/gallery/turtle-conservation.jpg",
+    thumb: "assets/images/gallery/turtle-conservation.jpg",
+    alt: "Green sea turtle swimming peacefully in a protective rehabilitation pool",
+    caption: "Community-led preservation protecting endangered sea turtles nesting on southern beaches.",
+    featured: false
+  },
+  {
+    id: "gal-23",
+    title: "Madu Ganga Mangrove River Safari",
+    category: "experiences",
+    categoryLabel: "Local Experiences",
+    location: "Balapitiya, Southern Province",
+    image: "assets/images/gallery/madu-ganga-river.jpg",
+    thumb: "assets/images/gallery/madu-ganga-river.jpg",
+    alt: "Wooden motorboat gliding beneath dense mangrove tunnels on the Madu Ganga",
+    caption: "Exploring 64 islands, cinnamon peeling homesteads, and coastal mangrove tunnels.",
+    featured: false
+  },
+  {
+    id: "gal-24",
+    title: "Cobblestone Lanes of Galle Fort",
+    category: "heritage",
+    categoryLabel: "Ancient Heritage",
+    location: "Galle Fort, Southern Province",
+    image: "assets/images/gallery/galle-street.jpg",
+    thumb: "assets/images/gallery/galle-street.jpg",
+    alt: "Charming colonial street with Dutch colonial tiled roofs, timber shutters, and bougainvillea",
+    caption: "Four centuries of living history preserved in serene pedestrian lanes.",
+    featured: false
+  },
+  {
+    id: "gal-25",
+    title: "Twilight on Mirissa Beach",
+    category: "coastlines",
+    categoryLabel: "Coastlines",
+    location: "Mirissa, Southern Province",
+    image: "assets/images/gallery/mirissa-sunset.jpg",
+    thumb: "assets/images/gallery/mirissa-sunset.jpg",
+    alt: "Golden evening glow over the gentle surf and swaying palm trees in Mirissa bay",
+    caption: "The tranquil close of another sun-drenched day along the warm southern coastline.",
+    featured: false
+  }
+];
+
+if (typeof Object.freeze === 'function') {
+  Object.freeze(GALLERY_DATA);
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = GALLERY_DATA;
+}

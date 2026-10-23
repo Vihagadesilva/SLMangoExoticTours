@@ -1,0 +1,373 @@
+[
+  {
+    "id": "sigiriya",
+    "name": "Sigiriya",
+    "tagline": "The Ancient Sky Citadel & Water Gardens",
+    "region": "Central Province (Matale District)",
+    "image": "assets/images/destinations/sigiriya.jpg",
+    "alt": "Sigiriya Lion Rock Fortress rising 200 meters above the central jungle canopy",
+    "badge": "UNESCO World Heritage",
+    "shortDescription": "A colossal 200-metre column of sheer volcanic rock transformed in the 5th century into an audacious royal citadel, surrounded by symphonic water gardens and ancient frescoes.",
+    "overview": "Built by King Kashyapa between 477 and 495 CE, Sigiriya represents an astonishing synthesis of natural geology, hydraulic engineering, and monumental palace architecture. Visitors enter through the lower landscaped water gardens, ascend along the sheer cliff face via spiralling staircases past the enigmatic Sigiriya Maidens frescoes and the reflective Mirror Wall, and reach the summit through the colossal carved paws of a stone lion. From the plateau, the 360-degree vistas across the surrounding dry-zone forests and emerald lakes are breathtaking.",
+    "attractions": [
+      "The Lion Paw Terraces and summit palace ruins",
+      "Ancient 5th-century cave frescoes (Sigiriya Maidens)",
+      "Hydraulic pleasure gardens with functioning gravity-fed fountains",
+      "The polished Mirror Wall with ancient Sinhalese graffiti",
+      "Pidurangala Rock vantage point directly opposite Sigiriya"
+    ],
+    "activities": [
+      "Early morning ascent before the midday tropical heat",
+      "Exploration of the boulder and terraced water gardens",
+      "Sunrise or twilight photography from neighboring Pidurangala",
+      "Traditional village bullock cart ride and rural lake catamaran crossing"
+    ],
+    "culturalSignificance": "One of the best preserved examples of first-millennium urban planning in South Asia, displaying remarkable mastery of hydraulic engineering, acoustics, and landscape aesthetics.",
+    "practicalTips": "Approx. 1,200 steps to the summit. Sturdy footwear, sun protection, and plenty of water are recommended. Early morning (07:00) or late afternoon (15:30) climbs offer cooler conditions and gentler light.",
+    "associatedTours": [
+      "classic-sri-lanka",
+      "cultural-heritage",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "kandy",
+    "name": "Kandy",
+    "tagline": "Sacred Lake City & Last Royal Kingdom",
+    "region": "Central Province (Kandy District)",
+    "image": "assets/images/destinations/kandy.jpg",
+    "alt": "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa) nestled beside Kandy Lake",
+    "badge": "UNESCO World Heritage",
+    "shortDescription": "Sri Lanka's cultural capital, cradled by forested peaks and centered on a peaceful lake, holding the island's most venerated relic at the Temple of the Sacred Tooth.",
+    "overview": "Kandy was the final stronghold of the independent Sinhalese monarchy, holding out against Portuguese, Dutch, and early British forces until 1815. At its heart lies the Sri Dalada Maligawa, where the sacred tooth relic of the Buddha has been protected for centuries. Surrounding the lake are historic colonial buildings, bustling artisan markets, the vast Royal Botanic Gardens at Peradeniya, and hillside nature reserves where mist lingers among canopy trees.",
+    "attractions": [
+      "Sri Dalada Maligawa (Temple of the Sacred Tooth Relic)",
+      "Kandy Lake (Kiri Muhuda) promenade and perimeter walk",
+      "Royal Botanic Gardens, Peradeniya (spanning 147 acres with over 4,000 plant species)",
+      "Udawatta Kele Sanctuary forest reserve",
+      "Bahirawakanda Vihara giant white Buddha hill vantage point"
+    ],
+    "activities": [
+      "Attending the sacred morning or evening Thevava (drumming and offering ceremony)",
+      "Walking among giant Javanese fig trees and orchid houses at Peradeniya",
+      "Traditional Kandyan cultural dance and drumming performance",
+      "Strolling the historic streets and gem artisan workshops"
+    ],
+    "culturalSignificance": "Spiritual heartland of Sri Lankan Buddhism and custodian of the Esala Perahera, one of Asia's most historic and elaborate annual Buddhist pageants.",
+    "practicalTips": "Modest attire is strictly required at sacred sites: shoulders and knees must be fully covered, and shoes/hats removed prior to entering temple precincts.",
+    "associatedTours": [
+      "classic-sri-lanka",
+      "tea-hills-ella",
+      "cultural-heritage",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "ella",
+    "name": "Ella",
+    "tagline": "Misty Mountain Gap & The Nine Arch Viaduct",
+    "region": "Uva Province (Badulla District)",
+    "image": "assets/images/destinations/ella.jpg",
+    "alt": "The colonial Nine Arch Bridge curved through lush green tea valleys in Ella",
+    "badge": "Highland Paradise",
+    "shortDescription": "A relaxed mountain village nestled in a natural mountain pass, famous for the Nine Arch Bridge, sweeping views of Ella Gap, and refreshing hiking trails.",
+    "overview": "Set at an elevation of roughly 1,041 metres, Ella offers a dramatic contrast to the lowland heat. Here, pine-scented breezes drift across sheer drop-offs, tea plantations mantle the slopes, and cascading waterfalls tumble into deep ravines. The iconic Nine Arch Bridge, built entirely of stone, brick, and cement without structural steel, emerges dramatically from the bamboo and banana groves as trains wind their way through the highlands.",
+    "attractions": [
+      "Nine Arch Bridge (Demodara Nine Arch Viaduct)",
+      "Little Adam's Peak (Punchi Sri Pada) ridge trail",
+      "Ella Rock panoramic lookout trail",
+      "Ravana Falls (cascading 25-metre waterfall)",
+      "Ravana Cave associated with the ancient Ramayana epic"
+    ],
+    "activities": [
+      "Photographing the blue train crossing the Nine Arch Viaduct",
+      "Easy sunrise hike along the grassy crest of Little Adam's Peak",
+      "Afternoon tea tasting and estate walk",
+      "Swimming at refreshing natural mountain pools and falls"
+    ],
+    "culturalSignificance": "Rich with folklore connecting the landscape to the ancient Ramayana legend of King Ravana and Princess Sita.",
+    "practicalTips": "Mountain weather can change rapidly with afternoon mist and rain showers; carry a light waterproof layer and wear shoes with good traction.",
+    "associatedTours": [
+      "tea-hills-ella",
+      "honeymoon-island",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "nuwara-eliya",
+    "name": "Nuwara Eliya",
+    "tagline": "The Little England of Ceylon Tea Country",
+    "region": "Central Province (Nuwara Eliya District)",
+    "image": "assets/images/destinations/nuwara-eliya.jpg",
+    "alt": "Emerald tea plantations carpeting the rolling hills around Nuwara Eliya",
+    "badge": "Tea Country Capital",
+    "shortDescription": "Sri Lanka's premier highland retreat, perched at 1,868 metres above sea level, wrapped in manicured tea terraces, Tudor-style bungalows, and cool mountain air.",
+    "overview": "Founded in the 19th century by British colonists seeking relief from the tropical lowlands, Nuwara Eliya retains its distinctive historic atmosphere with red-brick post offices, timbered cottages, and rose gardens. The surrounding valleys produce some of the world's most sought-after high-grown Ceylon teas, characterised by their crisp, delicate aroma and golden liquor.",
+    "attractions": [
+      "Historic working tea estates and processing factories (Pedro, Blue Field)",
+      "Lake Gregory water recreation park and shore walk",
+      "Horton Plains National Park & World's End precipice",
+      "Colonial 1894 Nuwara Eliya Post Office",
+      "Victoria Park and Hakgala Botanical Gardens"
+    ],
+    "activities": [
+      "Guided tea plucking experience and factory tasting masterclass",
+      "Boating or cycling around Lake Gregory",
+      "High tea service on the manicured lawns of colonial heritage hotels",
+      "Dawn expedition to Horton Plains and Baker's Falls"
+    ],
+    "culturalSignificance": "The epicentre of the global Ceylon Tea industry, demonstrating two centuries of artisanal agricultural mastery.",
+    "practicalTips": "Evenings can be chilly (10°C–14°C); pack a warm fleece, sweater, or jacket regardless of the season.",
+    "associatedTours": [
+      "classic-sri-lanka",
+      "tea-hills-ella",
+      "honeymoon-island",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "yala",
+    "name": "Yala National Park",
+    "tagline": "Wilderness Realm of Leopards & Elephants",
+    "region": "Southern & Uva Provinces",
+    "image": "assets/images/destinations/yala.jpg",
+    "alt": "A Sri Lankan leopard resting in the dense scrub forest of Yala National Park",
+    "badge": "Premier Wildlife Haven",
+    "shortDescription": "Sri Lanka's most renowned wildlife sanctuary, combining dry-zone forest, coastal scrub, and freshwater lagoons hosting one of the world's highest densities of leopards.",
+    "overview": "Covering 979 square kilometres bordering the Indian Ocean, Yala National Park is home to the endemic Sri Lankan leopard (Panthera pardus kotiya), wild Asian elephants, sloth bears, spotted deer, mugger crocodiles, and over 200 species of resident and migratory birds. Safaris take place in custom open-top 4x4 vehicles guided by skilled naturalists who interpret tracks and calls across the bushland.",
+    "attractions": [
+      "Yala Block 1 wildlife terrain and coastal sand dunes",
+      "Patanangala coastal rock formation and tsunami memorial",
+      "Freshwater lagoons teeming with painted storks, pelicans, and spoonbills",
+      "Ancient Sithulpawwa rock monastery hidden deep in the wilderness"
+    ],
+    "activities": [
+      "Early morning 4x4 open-air game drive at dawn (06:00 – 09:30)",
+      "Afternoon golden hour safari track (15:00 – 18:00)",
+      "Birdwatching along the brackish coastal lagoons",
+      "Stargazing and luxury tented eco-camping near park boundaries"
+    ],
+    "culturalSignificance": "Harbours ancient Buddhist hermitage ruins dating back over 2,200 years, embedded silently within protected wildlife habitats.",
+    "practicalTips": "Safaris are bumpy and dusty; sunglasses, wide-brim hats, neutral-coloured clothing, and camera zoom lenses are highly recommended.",
+    "associatedTours": [
+      "wildlife-safari",
+      "honeymoon-island",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "galle",
+    "name": "Galle Fort",
+    "tagline": "Living 17th-Century Dutch Maritime Bastion",
+    "region": "Southern Province (Galle District)",
+    "image": "assets/images/destinations/galle.jpg",
+    "alt": "Galle Fort lighthouse and historic stone sea wall overlooking the turquoise ocean",
+    "badge": "UNESCO World Heritage",
+    "shortDescription": "A remarkably preserved European fortress in South Asia, where 400-year-old stone ramparts enclose quiet cobbled alleys, boutique shops, and ocean breezes.",
+    "overview": "Built first by the Portuguese in 1588 and extensively fortified by the Dutch East India Company in 1663, Galle Fort is an active, vibrant community where centuries of colonial, Moorish, and Sinhalese heritage coalesce. Granite bastions jut directly into the Indian Ocean, protecting Dutch Reformed churches, antique shops, gelato parlours, and restored merchants' villas shaded by frangipani trees.",
+    "attractions": [
+      "Galle Lighthouse (Pointe de Galle) standing on the coastal rampart",
+      "Flag Rock bastion for sunset watching and ocean views",
+      "Dutch Reformed Church (Groote Kerk) built in 1755",
+      "National Maritime Museum housed in the Dutch warehouse",
+      "Pedlar Street and Church Street pedestrian corridors"
+    ],
+    "activities": [
+      "Walking the intact 3-kilometre stone rampart circuit at sunset",
+      "Exploring independent design boutiques, jewellers, and art galleries",
+      "Sampling fresh seafood, Ceylon cinnamon spiced curries, and gelato",
+      "Photographing colonial street architecture and Dutch gables"
+    ],
+    "culturalSignificance": "The finest surviving example of a fortified European colonial city in South and Southeast Asia, retaining its historic street layout and residential life.",
+    "practicalTips": "Best explored on foot. Midday sun on the ramparts can be intense; late afternoon offers gentler temperatures, ocean breezes, and glowing light.",
+    "associatedTours": [
+      "classic-sri-lanka",
+      "southern-shores",
+      "honeymoon-island",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "mirissa",
+    "name": "Mirissa",
+    "tagline": "Golden Sands, Coconut Bluffs & Ocean Giants",
+    "region": "Southern Province (Matara District)",
+    "image": "assets/images/destinations/mirissa.jpg",
+    "alt": "Coconut Tree Hill in Mirissa overlooking the blue waters of the Indian Ocean",
+    "badge": "Coastal Paradise",
+    "shortDescription": "A laid-back southern coastal haven famed for its crescent-shaped golden beach, scenic Coconut Tree Hill, and world-class marine life excursions.",
+    "overview": "Mirissa balances tropical relaxation with remarkable ocean encounters. The continental shelf drops sharply just off the coast, drawing blue whales, sperm whales, and pods of spinner dolphins during the migratory season. On land, visitors unwind under swaying palms, surf gentle beach breaks, and gather at sunset atop Coconut Tree Hill to watch waves roll onto the rocky promontory.",
+    "attractions": [
+      "Coconut Tree Hill red-dirt promontory",
+      "Mirissa Beach golden sand bay",
+      "Secret Beach secluded rocky cove",
+      "Parrot Rock tidal lookout islet",
+      "Mirissa Fishery Harbour and traditional catamaran fleet"
+    ],
+    "activities": [
+      "Ethical early morning whale watching boat excursion (seasonal: Nov–Apr)",
+      "Surfing lessons at Mirissa bay or nearby Weligama beach",
+      "Sunset photography at Coconut Tree Hill",
+      "Fresh grilled seafood dinners on the sand under fairy lights"
+    ],
+    "culturalSignificance": "A traditional coastal fishing hub that seamlessly welcomes global travellers while preserving artisanal boat-building and coastal traditions.",
+    "practicalTips": "Whale watching boats depart early (around 06:30); motion sickness prevention is advised for those sensitive to ocean swells.",
+    "associatedTours": [
+      "southern-shores",
+      "honeymoon-island",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "udawalawe",
+    "name": "Udawalawe National Park",
+    "tagline": "Guaranteed Wild Elephant Gatherings & Open Plains",
+    "region": "Sabaragamuwa & Uva Provinces",
+    "image": "assets/images/destinations/udawalawe.jpg",
+    "alt": "Herd of wild Asian elephants feeding in the open grasslands of Udawalawe",
+    "badge": "Elephant Sanctuary",
+    "shortDescription": "A vast expanse of grassland and scrub surrounding a central reservoir, celebrated as one of the best places in Asia to see wild elephants year-round.",
+    "overview": "Centred around the Udawalawe Reservoir, this park rivals the African savannah in openness and wildlife visibility. With a resident population of several hundred wild Asian elephants, herds with calves are almost always encountered grazing, bathing, and socialising along the water's edge. It is also home to water buffalo, sambar deer, jackals, and an abundance of raptors including crested serpent eagles.",
+    "attractions": [
+      "Udawalawe Reservoir lake basin and marshlands",
+      "Elephant Transit Home (ETH) rehabilitation project",
+      "Open savannah plains framed by distant mountain ranges",
+      "Abundant water bird colonies and raptors"
+    ],
+    "activities": [
+      "3-hour open-top 4x4 safari with local park tracker",
+      "Observing milk-feeding time of orphaned baby elephants at the Transit Home",
+      "Birdwatching around the reservoir fringes",
+      "Scenic countryside drive through banana and sugar cane plantations"
+    ],
+    "culturalSignificance": "The Elephant Transit Home at Udawalawe is globally recognized for successfully rehabilitating orphaned wild elephant calves and releasing them back into the wild.",
+    "practicalTips": "Morning safaris offer the most active wildlife behavior; bring binoculars, sun protection, and a telephoto lens for photography.",
+    "associatedTours": [
+      "wildlife-safari",
+      "family-island-escape",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "dambulla",
+    "name": "Dambulla",
+    "tagline": "The Golden Cave Monasteries of the Rock",
+    "region": "Central Province (Matale District)",
+    "image": "assets/images/destinations/dambulla.jpg",
+    "alt": "Golden Dagoba and ancient rock temple entrance at Dambulla Cave Temple",
+    "badge": "UNESCO World Heritage",
+    "shortDescription": "Sri Lanka's largest and best-preserved cave temple complex, where five sanctuaries carved beneath an overhanging granite cliff hold 153 Buddha statues and 2,100 square metres of murals.",
+    "overview": "Dating back to the 1st century BCE when King Valagamba sought refuge here from invaders, Dambulla has served as an active Buddhist monastery for over two millennia. As visitors climb the sloping black rock, sweeping views of the surrounding countryside open up before entering the dimly lit cave shrines, where gilded statues and intricately painted ceilings depicting the life of the Buddha glow softly.",
+    "attractions": [
+      "Cave 1 (Devaraja Lena - Cave of the Divine King with a 14m reclining Buddha)",
+      "Cave 2 (Maharaja Lena - Cave of the Great Kings, the largest cavern)",
+      "Cave 3 (Maha Alut Vihara - The Great New Temple)",
+      "Panoramic views towards Sigiriya Rock from the temple terrace",
+      "Dambulla Golden Temple and museum at the base"
+    ],
+    "activities": [
+      "Walking quietly through the five ancient cavern chambers",
+      "Observing centuries of Buddhist pigment paintings preserved on natural rock ceilings",
+      "Feeding lotus flowers at the temple shrines with local worshippers",
+      "Sunset vistas over the surrounding countryside from the rocky summit terrace"
+    ],
+    "culturalSignificance": "A continuous pilgrimage site for over 22 centuries, representing an uninterrupted tradition of Buddhist religious art and cave architecture.",
+    "practicalTips": "Strict dress code applies (covered shoulders and knees). Shoes must be removed at the upper terrace entrance (socks are recommended on sunny days as the rock surface heats up).",
+    "associatedTours": [
+      "classic-sri-lanka",
+      "cultural-heritage",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "polonnaruwa",
+    "name": "Polonnaruwa",
+    "tagline": "The Medieval Royal City of Stone Carvings",
+    "region": "North Central Province",
+    "image": "assets/images/destinations/polonnaruwa.jpg",
+    "alt": "The ancient stone Vatadage circular relic house in Polonnaruwa",
+    "badge": "UNESCO World Heritage",
+    "shortDescription": "Sri Lanka's second ancient capital, a splendid medieval city of monumental brick palaces, circular relic shrines, and serene Buddha statues sculpted from single granite faces.",
+    "overview": "Established as the island capital from the 11th to 13th centuries, Polonnaruwa flourished under King Parakramabahu I, who declared that 'not a single drop of water received from the sky should be allowed into the ocean without serving man.' The resulting Sea of Parakrama (Parakrama Samudra) irrigated a thriving royal metropolis whose stone palaces, audience halls, and monastic colleges stand proudly amidst shady parkland.",
+    "attractions": [
+      "Gal Vihara (Rock Temple) with four monumental Buddha statues carved from a single granite slab",
+      "The Royal Palace of King Parakramabahu and Council Chamber",
+      "The Dalada Maluwa (Sacred Quadrangle) and circular Vatadage",
+      "Rankoth Vehera (colossal 55-metre brick stupa)",
+      "Parakrama Samudra ancient man-made reservoir"
+    ],
+    "activities": [
+      "Leisurely cycling between ruins shaded by mahogany and banyan trees",
+      "Examining the exquisite moonstone and guardstone carvings at the Quadrangle",
+      "Quiet contemplation in front of the serene 7-metre standing and 14-metre reclining Buddhas of Gal Vihara",
+      "Afternoon boat ride or sunset stroll along the bund of Parakrama Samudra"
+    ],
+    "culturalSignificance": "Peak achievement of medieval Sinhalese rock-carving art, hydraulic agriculture, and urban design.",
+    "practicalTips": "The archaeological zone is spread over several kilometres; renting a bicycle or touring with your private vehicle makes exploration comfortable.",
+    "associatedTours": [
+      "cultural-heritage",
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "trincomalee",
+    "name": "Trincomalee",
+    "tagline": "Deep Natural Harbours, Holy Cliffs & Coral Sands",
+    "region": "Eastern Province (Trincomalee District)",
+    "image": "assets/images/destinations/trincomalee.jpg",
+    "alt": "Trincomalee coastline and Koneswaram temple promontory overlooking the azure bay",
+    "badge": "East Coast Jewel",
+    "shortDescription": "One of the world's finest natural deep-water harbours, celebrated for sacred Hindu cliff temples, powdery white beaches at Nilaveli, and Pigeon Island coral reefs.",
+    "overview": "Trincomalee boasts a unique maritime history stretching back thousands of years. Perched dramatically atop the rocky precipice of Swami Rock, the ancient Hindu temple of Koneswaram overlooks the deep ocean trench where blue whales often pass close to shore. To the north lie the tranquil white-sand stretches of Nilaveli and Uppuveli, with the marine national park of Pigeon Island offering crystal-clear snorkelling among blacktip reef sharks and sea turtles.",
+    "attractions": [
+      "Koneswaram Temple (Dakshina Kailasam) on Swami Rock",
+      "Fort Frederick colonial Portuguese and Dutch ramparts",
+      "Nilaveli and Uppuveli pristine white sand beaches",
+      "Pigeon Island National Park coral sanctuary",
+      "Kanniya Natural Hot Springs"
+    ],
+    "activities": [
+      "Snorkelling and diving among coral reefs at Pigeon Island",
+      "Attending the sacred midday Pooja ceremony at Koneswaram Temple",
+      "Watching wild spotted deer roam peacefully within Fort Frederick",
+      "Whale and dolphin watching excursions in the deep outer bay"
+    ],
+    "culturalSignificance": "Koneswaram is one of the five Pancha Ishwarams (ancient sacred abodes of Lord Shiva) revered across the Hindu world for millennia.",
+    "practicalTips": "The East Coast enjoys its prime dry, sunny season from May through October, making it ideal when the southwest coast experiences monsoonal rains.",
+    "associatedTours": [
+      "complete-sri-lanka"
+    ]
+  },
+  {
+    "id": "scenic-train",
+    "name": "Scenic Highland Train",
+    "tagline": "The World's Most Beautiful Mountain Railway",
+    "region": "Central & Uva Provinces",
+    "image": "assets/images/destinations/scenic-train.jpg",
+    "alt": "The bright blue Ceylon train winding through highland tea plantations and mountain tunnels",
+    "badge": "Bucket-List Journey",
+    "shortDescription": "An unhurried journey through misty mountain passes, cascading waterfalls, and undulating emerald tea estates along the historic Main Line.",
+    "overview": "Originally constructed in the 1860s by the British to transport tea and coffee down to Colombo Harbour, the railway between Kandy, Nanu Oya (Nuwara Eliya), and Ella is celebrated today as one of humanity's most scenic rail journeys. The vintage blue and red trains climb slowly around mountain ridges, through hand-hewn stone tunnels, and across dizzying viaducts while cool mountain breezes blow through open carriage doors.",
+    "attractions": [
+      "The Great Western range and pine-forested peaks",
+      "St. Clair's and Devon waterfalls visible in the distance",
+      "Pattipola Railway Station (highest broad-gauge rail station in Sri Lanka at 1,898m)",
+      "The Demodara Loop (where the railway tracks loop under themselves through a tunnel)",
+      "Waving tea estate workers and mountain village stations"
+    ],
+    "activities": [
+      "Relaxing by an open train window with cool mountain air",
+      "Enjoying fresh warm 'vade' and spiced tea from platform vendors",
+      "Capturing breathtaking video of emerald tea hills unfolding around sweeping bends",
+      "Seamless transfer: your private driver transports your luggage ahead to your hotel"
+    ],
+    "culturalSignificance": "A masterpiece of 19th-century railway engineering that opened the central highlands and transformed the island's economic landscape.",
+    "practicalTips": "Reserved seats book out weeks in advance; with SL Mango Exotic Tours, we coordinate ticket arrangements well ahead and ensure your heavy luggage travels safely by private car to your next hotel.",
+    "associatedTours": [
+      "classic-sri-lanka",
+      "tea-hills-ella",
+      "honeymoon-island",
+      "complete-sri-lanka"
+    ]
+  }
+]
