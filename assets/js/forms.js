@@ -62,9 +62,12 @@ function prefillFromQueryParams(form) {
     }
     if (messageArea && !messageArea.value) {
       const vehicleNames = {
-        'private-car': 'Executive Sedan (Private Car)',
-        'kdh-van': 'Toyota HiAce KDH Luxury Van',
-        'coaster-bus': 'Toyota Coaster Mini-Coach'
+        'prius-premio': 'Prius Car / Premio Car (1–2 Pax, Full A/C & Professional Chauffeur Guide)',
+        'kdh-flat-roof': 'KDH Flat Roof Van (4 Pax, Full A/C & Professional Chauffeur Guide)',
+        'kdh-high-roof': 'High Roof KDH Luxury Van (6–8 Pax, Full A/C & National Tour Guide / Senior Chauffeur)',
+        'coaster-bus': 'Toyota Coaster Bus (10+ Pax, Full Ducted A/C & National Tour Guide)',
+        'private-car': 'Prius Car or Premio Car (1–2 Pax)',
+        'kdh-van': 'Toyota HiAce KDH Van'
       };
       const vName = vehicleNames[vehicleSlug] || 'Private Transport';
       messageArea.value = `Hello SL Mango Exotic Tours, I would like to enquire about renting a ${vName} with a licensed chauffeur-guide for our upcoming journey in Sri Lanka.`;

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVideo();
   initWondersOfCeylon();
   initSharedGalleryPreviews();
+  initFleetFilter();
   initCurrentYear();
 });
 
@@ -37,11 +38,11 @@ function initHeader() {
  * Mobile Navigation Drawer & Backdrop
  */
 function initMobileNav() {
-  const toggleBtn = document.querySelector('.mobile-menu-toggle');
+  const toggleBtns = document.querySelectorAll('.mobile-menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
   let backdrop = document.querySelector('.nav-backdrop');
 
-  if (!toggleBtn || !navMenu) return;
+  if (!toggleBtns.length || !navMenu) return;
 
   // Create backdrop element if not already in DOM
   if (!backdrop) {
@@ -51,35 +52,58 @@ function initMobileNav() {
   }
 
   const openMenu = () => {
-    toggleBtn.classList.add('is-active');
-    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtns.forEach(btn => {
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-expanded', 'true');
+    });
     navMenu.classList.add('is-open');
     backdrop.classList.add('is-visible');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('mobile-nav-open');
+    document.documentElement.classList.add('mobile-nav-open');
   };
 
   const closeMenu = () => {
-    toggleBtn.classList.remove('is-active');
-    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtns.forEach(btn => {
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-expanded', 'false');
+    });
     navMenu.classList.remove('is-open');
     backdrop.classList.remove('is-visible');
-    document.body.style.overflow = '';
+    document.body.classList.remove('mobile-nav-open');
+    document.documentElement.classList.remove('mobile-nav-open');
   };
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = navMenu.classList.contains('is-open');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = navMenu.classList.contains('is-open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
   });
 
-  backdrop.addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+  });
+  backdrop.addEventListener('touchstart', (e) => {
+    closeMenu();
+  }, { passive: true });
 
-  // Close menu when clicking any nav link
-  navMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
+  // Prevent clicks inside navMenu from closing
+  navMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  // Close menu when clicking any nav link or drawer CTA
+  navMenu.querySelectorAll('.nav-link, .mobile-drawer-cta').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
   });
 
   // Close on Escape key
@@ -88,6 +112,13 @@ function initMobileNav() {
       closeMenu();
     }
   });
+
+  // Close on resize if transitioning above mobile breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991 && navMenu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  }, { passive: true });
 }
 
 /**
@@ -1164,4 +1195,42 @@ function initHeroVideo() {
 
   updateVideoUI(!video.paused);
   updateAudioUI();
+}
+
+/**
+ * Interactive Fleet Filter Bar (Services Page)
+ */
+function initFleetFilter() {
+  const filterBtns = document.querySelectorAll('.fleet-filter-btn');
+  const vehicleCards = document.querySelectorAll('.vehicles-grid [data-fleet-category]');
+  if (!filterBtns.length || !vehicleCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetFilter = btn.getAttribute('data-fleet-filter');
+      
+      filterBtns.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+
+      vehicleCards.forEach(card => {
+        const cat = card.getAttribute('data-fleet-category');
+        if (targetFilter === 'all' || cat === targetFilter) {
+          card.classList.remove('is-hidden');
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          });
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
 }

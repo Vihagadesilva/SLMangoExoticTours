@@ -27,6 +27,9 @@
     prepareHeroHeadings();
     initScrollReveals();
     initDynamicContentObserver();
+    initExperiencesParallax();
+    initExperiencesGallery();
+    initCeoYearCounter();
   }
 
   /**
@@ -81,7 +84,9 @@
       '.wonders-category-filters',
       '.wonders-journal-layout',
       '.experiences-editorial-grid',
-      '.experience-closing-moment'
+      '.experience-closing-moment',
+      '.ceo-experience-section',
+      '.ceo-experience-content-col'
     ];
 
     const cardSelectors = [
@@ -93,7 +98,9 @@
       '.steps-grid .step-card',
       '.shared-gallery-preview .preview-thumb',
       '.gallery-grid .gallery-card',
-      '.itinerary-day-card'
+      '.itinerary-day-card',
+      '.ceo-experience-card',
+      '.ceo-experience-indicator-item'
     ];
 
     if (!isObserverSupported) {
@@ -157,7 +164,7 @@
 
             if (parentGrid) {
               const siblings = Array.from(parentGrid.children).filter((el) =>
-                el.matches('.destination-card, .tour-card, .vehicle-card, .service-card, .step-card, .preview-thumb, .gallery-card, .itinerary-day-card')
+                el.matches('.destination-card, .tour-card, .vehicle-card, .service-card, .step-card, .preview-thumb, .gallery-card, .itinerary-day-card, .experience-card, .ceo-experience-card, .ceo-experience-indicator-item')
               );
               const cardIndex = siblings.indexOf(card);
               if (cardIndex >= 0) {
@@ -229,5 +236,166 @@
     dynamicMounts.forEach((mount) => {
       observer.observe(mount, { childList: true, subtree: true });
     });
+  }
+
+  /**
+   * Subtle, lightweight parallax for selected high-impact elements in the Experiences showcase
+   * Restricted strictly to #experiences [data-parallax="true"]
+   * Throttled via requestAnimationFrame, disabled on mobile (<= 768px) and prefers-reduced-motion.
+   */
+  function initExperiencesParallax() {
+    if (!('requestAnimationFrame' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const parallaxItems = document.querySelectorAll('#experiences [data-parallax="true"]');
+    if (!parallaxItems.length) return;
+
+    let isTicking = false;
+
+    function updateParallax() {
+      if (window.innerWidth <= 768) {
+        parallaxItems.forEach((el) => el.style.removeProperty('--parallax-y'));
+        isTicking = false;
+        return;
+      }
+
+      const vh = window.innerHeight;
+
+      parallaxItems.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        // Only calculate when near or within viewport
+        if (rect.bottom > -100 && rect.top < vh + 100) {
+          const centerY = rect.top + rect.height / 2;
+          const progress = (centerY - vh / 2) / (vh / 2);
+          const clamped = Math.max(-1, Math.min(1, progress));
+          const offset = (clamped * 14).toFixed(1);
+          el.style.setProperty('--parallax-y', `${offset}px`);
+        }
+      });
+
+      isTicking = false;
+    }
+
+    function onScroll() {
+      if (!isTicking) {
+        isTicking = true;
+        window.requestAnimationFrame(updateParallax);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // Initial pass
+    updateParallax();
+  }
+
+  /**
+   * Expandable Experiences Gallery (6 initial featured cards -> 16 total cards)
+   * Handles keyboard navigation, screen reader announcements, smooth staggered reveal,
+   * button state updates, and accessible collapse with smooth scroll to preserve viewport context.
+   */
+  function initExperiencesGallery() {
+    const grid = document.getElementById('experiences-grid');
+    const toggleBtn = document.getElementById('experiences-toggle-btn');
+    const caption = document.getElementById('experiences-toggle-caption');
+    if (!grid || !toggleBtn) return;
+
+    // Progressive enhancement: add .is-collapsible to enable initial 6-card display
+    grid.classList.add('is-collapsible');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+
+    const btnText = toggleBtn.querySelector('.experiences-toggle-btn-text');
+
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = grid.classList.contains('is-expanded');
+
+      if (!isExpanded) {
+        // --- EXPAND GALLERY ---
+        grid.classList.add('is-expanded');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        if (btnText) btnText.textContent = 'Show Less';
+        if (caption) caption.textContent = 'Showing all 16 experiences across Sri Lanka';
+
+        // Re-scan card observers for newly visible items
+        if (typeof window.refreshMotionReveals === 'function') {
+          window.refreshMotionReveals();
+        }
+
+        // Trigger parallax re-calculation
+        window.dispatchEvent(new Event('scroll'));
+      } else {
+        // --- COLLAPSE GALLERY ---
+        grid.classList.remove('is-expanded');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        if (btnText) btnText.textContent = 'Discover All Experiences';
+        if (caption) caption.textContent = 'Explore all 16 experiences across Sri Lanka';
+
+        // Keep focus on the toggle button and ensure comfortable viewport position
+        setTimeout(() => {
+          toggleBtn.focus({ preventScroll: true });
+          const btnRect = toggleBtn.getBoundingClientRect();
+          const vh = window.innerHeight;
+          // If the button is not nicely centered in viewport, smoothly scroll to it
+          if (btnRect.top < 80 || btnRect.bottom > vh - 40) {
+            toggleBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 50);
+      }
+    });
+  }
+
+  /**
+   * Animate the CEO experience year counter smoothly when entering viewport,
+   * ensuring the final value 2003 is strictly accurate and reduced-motion is respected.
+   */
+  function initCeoYearCounter() {
+    const yearEls = document.querySelectorAll('.ceo-experience-stat-year, #ceo-stat-year');
+    if (!yearEls.length) return;
+
+    const targetYear = 2003;
+
+    // Respect user motion preference
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      yearEls.forEach((el) => { el.textContent = targetYear.toString(); });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            obs.unobserve(entry.target);
+            animateYear(entry.target, targetYear);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    yearEls.forEach((el) => observer.observe(el));
+  }
+
+  function animateYear(el, target) {
+    const startYear = target - 8; // e.g., 1995 -> 2003
+    const duration = 1200; // ms
+    const startTime = performance.now();
+
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Cubic-out easing for dignified deceleration
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.round(startYear + (target - startYear) * easeOut);
+      el.textContent = currentVal.toString();
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toString(); // Strictly guaranteed 2003
+      }
+    }
+
+    requestAnimationFrame(step);
   }
 })();

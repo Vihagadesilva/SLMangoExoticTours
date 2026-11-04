@@ -9,6 +9,1398 @@
 
 const TOURS_DATA = [
   {
+  "slug": "golden-pearl-of-sri-lanka",
+  "title": "The Golden Pearl of Sri Lanka",
+  "subtitle": "A 14-Day Grand Discovery",
+  "duration": "14 Days",
+  "durationNights": "14 Days / 13 Nights",
+  "durationDays": 14,
+  "category": "Culture • Wildlife • Mountains • Waterfalls • Scenic Train Journeys • Tropical Beaches",
+  "categorySlug": "classic",
+  "badge": "Grand Discovery",
+  "isGoldPackage": true,
+  "heroImage": "assets/images/tours/golden-pearl-of-sri-lanka/hero.jpg",
+  "destinationsSummary": "Habarana • Sigiriya • Kandy • Nuwara Eliya • Ella • Udawalawe • Galle • Mirissa • Madu River • Negombo",
+  "activityBadges": [
+    "Culture & Heritage",
+    "Wildlife Safari",
+    "Highlands & Mountains",
+    "Waterfalls & Hiking",
+    "Scenic Train Journeys",
+    "Tropical Beaches",
+    "Community Giving"
+  ],
+  "pace": "Paced Grand Discovery (Private Chauffeur & National Tourist Guide)",
+  "suitableFor": "Couples, independent travellers, families, wildlife enthusiasts, and cultural seekers wanting a complete 14-day Sri Lanka journey",
+  "shortDescription": "Discover the true beauty of Sri Lanka in 14 unforgettable days. From ancient temples and traditional village life to misty tea plantations, exciting wildlife safaris, cascading waterfalls and golden beaches, this journey invites you to experience the island’s culture, landscapes, flavours and warm hospitality.",
+  "overview": "The Golden Pearl of Sri Lanka — A 14-Day Grand Discovery is our flagship private tour crafted by SL Mango Exotic Tours. Designed for discerning international travellers, this journey seamlessly weaves together ancient royal citadels, rich biological reserves, misty central highlands, dramatic waterfalls, world-famous rail routes, and tranquil western and southern coastlines. Accompanied throughout by a licensed National Tourist Guide and executive air-conditioned transport, you will experience Sri Lanka at an unhurried, graceful cadence. From sunrise over Sigiriya from the crags of Pidurangala to swimming below hill-country cascades, encountering elephant herds in Udawalawe, and unwinding along golden palm shores, every single day offers an authentic, memorable chapter of Ceylon.",
+  "highlights": [
+    "Ascend Pidurangala Rock at sunrise for breathtaking panoramic views of Sigiriya Lion Rock",
+    "Immerse in authentic rural life with an oxcart ride, catamaran crossing, and village culinary demonstration",
+    "Pay homage at the sacred Temple of the Tooth in Kandy and attend a traditional cultural dance performance",
+    "Marvel at Ambuluwawa Tower, Embekka wood carvings, and centuries of architectural wonder",
+    "Journey by scenic train from Nanu Oya to Ella through emerald hills and colonial viaducts",
+    "Hike around the cascading tiers and natural pools of Diyaluma and visit roaring Ravana Falls",
+    "Embark on an open 4x4 safari across Udawalawe National Park observing herds of wild Asian elephants",
+    "Explore UNESCO World Heritage Galle Fort ramparts, Mirissa's Coconut Tree Hill, and traditional stilt fishermen",
+    "Cruise the biodiverse mangrove channels of the Madu River and visit sea turtle conservation hatcheries",
+    "Unwind beside the turquoise Indian Ocean in coastal Negombo with fresh seafood and sunset walks",
+    "Opportunity for an organised, respectful school-supplies donation visit to support local communities"
+  ],
+  "routeOverview": "Bandaranaike Airport → Habarana (3 Nights) → Kandy (1 Night) → Nuwara Eliya (1 Night) → Ella (1 Night) → Udawalawe (1 Night) → Southern Coast & Mirissa (2 Nights) → Negombo Beach (3 Nights) → Airport Departure",
+  "specialFeatures": [
+    {
+      "title": "Culture & Heritage",
+      "desc": "Explore ancient temples, historic architecture, traditional villages and sacred cultural landmarks."
+    },
+    {
+      "title": "Wildlife & Nature",
+      "desc": "Discover national parks, wild elephants, tropical forests, impressive waterfalls and scenic natural landscapes."
+    },
+    {
+      "title": "Authentic Local Experiences",
+      "desc": "Enjoy village tours, traditional cooking demonstrations, local food and insights into everyday Sri Lankan life."
+    },
+    {
+      "title": "Scenic Hill Country",
+      "desc": "Experience lush tea plantations, cool mountain scenery and the famous train journey through Sri Lanka’s highlands."
+    },
+    {
+      "title": "Coastal Adventures",
+      "desc": "Discover mangrove waterways, marine conservation, historic coastal towns and beautiful tropical beaches."
+    },
+    {
+      "title": "Community Giving",
+      "desc": "Where arrangements allow, support rural schools and communities with useful supplies requested by local contacts."
+    }
+  ],
+  "communityGiving": {
+    "title": "A Journey That Gives Back",
+    "tagline": "Thoughtful community support woven into your Sri Lankan travel story",
+    "description": "Along the way, SL Mango Exotic Tours can help arrange a respectful community-support visit to a rural school or village, where travellers may donate useful educational supplies such as exercise books, pens, pencils, crayons and other school essentials. This optional charitable activity should be coordinated with the school or a trusted local contact to understand what is genuinely needed.",
+    "disclaimer": "We encourage guests to contribute items requested by the school, respect local customs and privacy, and seek permission before taking photographs of children or sharing images. Visits depend on school schedules, community consent and prior arrangements; donations are voluntary and are not guaranteed to be part of the standard tour price.",
+    "items": [
+      "Exercise books and ruled notebooks",
+      "Pens, pencils, erasers and sharpeners",
+      "Colour pencils, crayons and basic art supplies",
+      "Rulers, geometry sets and other requested classroom essentials"
+    ]
+  },
+  "inclusions": [
+    "Accommodation at hotels meeting a minimum 3-star standard, subject to availability and final confirmation",
+    "Private tour transportation throughout according to the agreed itinerary in an executive air-conditioned vehicle",
+    "Personalised airport pickup and departure transfer",
+    "National Tourist Guide service throughout the tour, sharing insights into history, culture, traditions, and natural heritage",
+    "The sightseeing, local experiences, and meals specifically listed as included in the final confirmed itinerary",
+    "Opportunity to request a customised package with 4-star or 5-star hotels or luxury resorts (upgrades available upon request)",
+    "Opportunity for a pre-arranged, respectful community-support visit, subject to permission and availability",
+    "Habarana authentic village tour with traditional cart ride, lake catamaran crossing, and cookery demonstration with village lunch (Day 2)",
+    "Evening wildlife safari in the Habarana area with dedicated 4x4 safari jeep and driver-tracker (Day 2)",
+    "Pidurangala Rock guided sunrise hike and Dambulla Royal Cave Temple UNESCO complex visit (Day 3)",
+    "Herbal spice garden visit, traditional Sri Lankan cooking demonstration, and specified complimentary lunch with fruits and cocktail (Day 4)",
+    "Temple of the Sacred Tooth Relic evening admission, Kandyan cultural dance performance, and Kandy viewpoint visit (Day 4)",
+    "Ambuluwawa Tower visit, Gadaladeniya Temple, Embekka Devalaya, Lankathilaka Temple, and Ceylon gem museum (Day 5)",
+    "Scenic hill-country journey, waterfall stops, tea plantation and factory visit with Ceylon tea-making experience and tasting (Day 6)",
+    "Historic Nuwara Eliya Post Office visit and colonial city tour (Day 6)",
+    "Scenic train journey from Nanu Oya to Ella through highland tea estates (Day 7, subject to advance booking and railway availability)",
+    "Nine Arch Bridge and Little Adam's Peak scenic hikes in Ella (Day 7)",
+    "Morning visit to Ravana Falls and guided Diyaluma Falls waterfall hike with picnic lunch and one complimentary beer (Day 8)",
+    "Udawalawe National Park 4x4 wildlife safari observing wild Asian elephants (Day 9)",
+    "Scheduled elephant-feeding experience, subject to facility availability and ethical welfare practices (Day 9)",
+    "Historic Galle Fort ramparts walk, Mirissa Coconut Tree Hill visit, and traditional stilt fishing viewing (Day 9)",
+    "Approximately 1.5-hour Madu River mangrove boat safari and sea turtle conservation centre visit (Day 10)",
+    "Coastal seafood lunch featuring local ocean catch, accompanied by one complimentary beer (Day 10)",
+    "Negombo fish market visit, historic church exploration, and dedicated beachside relaxation time (Days 11–13)"
+  ],
+  "exclusions": [
+    "Driver gratuity: Recommended €2.50 per person, per day",
+    "National Tourist Guide gratuity: Recommended €5.00 per person, per day",
+    "Hotel staff tips, at your personal discretion",
+    "Optional Sigiriya Lion Rock entrance fee and any other activities or costs not explicitly included",
+    "Optional traditional Sri Lankan curry lunch on Day 3: approximately €10 per person",
+    "Optional one-hour Ayurvedic relaxation treatment on Day 3",
+    "Personal expenses, laundry, telephone calls, and alcoholic beverages not explicitly listed as included",
+    "International flight tickets and entry visa fees (ETA for Sri Lanka)",
+    "Activities, meals, entrance fees or personal expenses not explicitly listed as included"
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Welcome to Sri Lanka | Journey to Habarana",
+      "subtitle": "Your Sri Lankan adventure begins!",
+      "destination": "Habarana",
+      "introduction": "Touch down at Bandaranaike International Airport where your private tour representative and chauffeur-guide extend a warm Ceylon welcome. Begin your journey inland towards Habarana, an ideal central hub for exploring Sri Lanka's renowned Cultural Triangle. Along the route, enjoy expansive views of the lush tropical countryside, passing vibrant coconut groves and pineapple plantations. Stop at an authentic roadside stall to refresh yourself with sweet, natural king coconut water before arriving at your hotel to settle in and unwind after your flight.",
+      "activities": [
+        {
+          "title": "Airport Welcome & Executive Private Transfer",
+          "description": "Personalised meet-and-greet in the arrivals hall, luggage assistance, and departure in a comfortable, air-conditioned private executive vehicle.",
+          "timing": "Upon Arrival",
+          "photos": [
+            {
+              "src": "assets/images/vehicles/private-car.jpg",
+              "alt": "SL Mango Exotic Tours private executive vehicle ready for airport transfer",
+              "caption": "Personalized private transfer welcoming you in comfort at the start of your 14-day discovery"
+            }
+          ]
+        },
+        {
+          "title": "Scenic Countryside Drive & King Coconut Tasting",
+          "description": "Drive through the fertile rural lowlands with views of coconut groves, paddy fields, and pineapple plantations, stopping to savour a freshly opened Ceylon king coconut (Thambili).",
+          "timing": "En Route to Habarana",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/sri-lanka-countryside.jpg",
+              "alt": "Tropical countryside road in Sri Lanka surrounded by lush green palm trees and morning light",
+              "caption": "Scenic countryside drive through tropical coconut plantations and rural farmland towards Habarana"
+            },
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/king-coconut.jpg",
+              "alt": "Fresh Ceylon king coconuts displaying vibrant orange husks at a roadside stall",
+              "caption": "Refreshing, pure king coconut water enjoyed fresh at a countryside plantation fruit stall"
+            }
+          ]
+        },
+        {
+          "title": "Hotel Check-In & Evening Relaxation",
+          "description": "Arrive at your hotel in Habarana, settle into your accommodation, and enjoy well-deserved rest in the peaceful natural surroundings of the Cultural Triangle.",
+          "timing": "Late Afternoon & Evening",
+          "photos": []
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/sri-lanka-countryside.jpg",
+          "alt": "Scenic tropical countryside drive in Sri Lanka",
+          "caption": "Lush tropical countryside road leading into Sri Lanka's Cultural Triangle"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/king-coconut.jpg",
+          "alt": "Fresh king coconut at a plantation stall",
+          "caption": "Traditional Sri Lankan king coconut refreshment along the journey"
+        },
+        {
+          "src": "assets/images/vehicles/private-car.jpg",
+          "alt": "Private tour vehicle and chauffeur transfer",
+          "caption": "Dedicated air-conditioned tour transportation throughout your holiday"
+        }
+      ],
+      "overnight": "Habarana",
+      "travelNotes": "Approx. 3.5 to 4 hours scenic drive from Bandaranaike International Airport (CMB) to Habarana.",
+      "optionalActivities": "Evening stroll through hotel gardens or a gentle dip in the swimming pool.",
+      "practicalNotes": "Lightweight, breathable clothing is best for the drive. King coconut water is naturally electrolyte-rich and ideal after a long flight."
+    },
+    {
+      "day": 2,
+      "title": "Authentic Village Life & Wildlife Safari",
+      "subtitle": "Experience the traditions, flavours and wildlife of Sri Lanka.",
+      "destination": "Habarana & Rural Countryside",
+      "introduction": "Step into the heart of Sri Lankan rural culture with an authentic village experience. Travel through peaceful rural hamlets on a traditional bullock cart before boarding a handcrafted wooden catamaran to glide across a lotus-dappled lake. Watch local agricultural methods firsthand, then join a local village woman for an interactive cookery demonstration with fresh clay pots and garden spices, followed by an authentic village lunch. Return by Landmaster tractor or three-wheeler tuk-tuk, then set off in the late afternoon for an exhilarating open 4x4 wildlife safari across the Habarana area.",
+      "activities": [
+        {
+          "title": "Traditional Village Cart Ride & Catamaran Lake Journey",
+          "description": "Embark on a traditional oxcart ride along quiet village tracks flanked by tall trees, followed by a serene journey across a tranquil reservoir on an authentic outrigger catamaran.",
+          "timing": "Morning",
+          "photos": [
+            {
+              "src": "assets/images/experiences/village-life.jpg",
+              "alt": "Traditional oxcart travelling along a rural village lane in Habarana",
+              "caption": "Authentic rural village tour with a traditional oxcart ride through peaceful countryside"
+            },
+            {
+              "src": "assets/images/experiences/oru-boat-journey.jpg",
+              "alt": "Handcrafted wooden catamaran boat crossing a lotus-filled village lake",
+              "caption": "Gliding peacefully across a calm reservoir on a traditional catamaran boat"
+            }
+          ]
+        },
+        {
+          "title": "Traditional Cookery Demonstration & Village Lunch",
+          "description": "Discover local agricultural traditions and kitchen secrets. A village host demonstrates time-honoured clay-pot cookery with hand-ground spices and fresh coconut milk, concluding with a delicious Sri Lankan lunch.",
+          "timing": "Midday",
+          "photos": [
+            {
+              "src": "assets/images/experiences/sri-lankan-cooking.jpg",
+              "alt": "Village cooking demonstration using traditional earthenware clay pots and open fire",
+              "caption": "Interactive Sri Lankan village cooking demonstration preparing fresh curries in clay pots"
+            }
+          ]
+        },
+        {
+          "title": "Landmaster Tractor or Tuk-Tuk Village Ride",
+          "description": "Return from the village homestead via a fun and authentic Landmaster power-tiller tractor ride or a nimble tuk-tuk, according to your preference.",
+          "timing": "Early Afternoon",
+          "photos": []
+        },
+        {
+          "title": "Evening Wildlife Safari in the Habarana Area",
+          "description": "Board a rugged 4x4 open safari vehicle for an evening wildlife game drive in search of wild Asian elephants, marsh crocodiles, deer, and exotic birdlife roaming their natural habitat.",
+          "timing": "Late Afternoon (15:00 – 18:30)",
+          "photos": [
+            {
+              "src": "assets/images/experiences/gentle-giants.jpg",
+              "alt": "Wild Asian elephant herd gathering peacefully in the grasslands of Habarana",
+              "caption": "Wild elephant herds observed in their natural habitat on an evening safari in Habarana"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/experiences/village-life.jpg",
+          "alt": "Traditional village cart ride in Habarana",
+          "caption": "Timeless village traditions and peaceful rural roads in Habarana"
+        },
+        {
+          "src": "assets/images/experiences/oru-boat-journey.jpg",
+          "alt": "Catamaran boat crossing rural lake",
+          "caption": "Serene catamaran navigation across the lotus-covered lake"
+        },
+        {
+          "src": "assets/images/experiences/sri-lankan-cooking.jpg",
+          "alt": "Clay pot Sri Lankan cooking demonstration",
+          "caption": "Authentic flavours prepared with hand-ground Ceylon spices"
+        },
+        {
+          "src": "assets/images/experiences/gentle-giants.jpg",
+          "alt": "Wild Asian elephants on evening safari",
+          "caption": "Evening wildlife safari encountering wild Asian elephants in open grasslands"
+        }
+      ],
+      "overnight": "Habarana",
+      "travelNotes": "Short transfers within Habarana village limits and to the surrounding safari parks (approx. 20–30 mins).",
+      "optionalActivities": "Evening poolside stargazing or quiet birdwatching around your resort grounds.",
+      "practicalNotes": "Safari vehicles are open-sided; bring sunglasses, hats, sunscreen, and neutral clothing. While elephants are abundant in the Habarana corridor, wildlife sightings are wild and natural and cannot be guaranteed."
+    },
+    {
+      "day": 3,
+      "title": "Pidurangala Sunrise Adventure, Dambulla & Local Life",
+      "subtitle": "The adventure is Pidurangala. The view is legendary.",
+      "destination": "Sigiriya & Dambulla",
+      "introduction": "Rise before the sun for the day's headline adventure: hiking up Pidurangala Rock. Follow a peaceful forest trail with ancient stone steps, culminating in an exhilarating rocky boulder scramble to the expansive granite summit. As golden dawn illuminates the horizon, enjoy an unmatched 360-degree panorama over forest reserves and lakes, with the monumental Sigiriya Lion Rock rising majestically before you. After descending, travellers who wish may opt to explore Sigiriya Rock Fortress. Later, savour an optional traditional feast of over 20 curries, cycle through a leafy village, and marvel at the UNESCO-listed painted caverns of Dambulla Cave Temple.",
+      "activities": [
+        {
+          "title": "Pidurangala Rock Sunrise Hike & Boulder Scramble",
+          "description": "Early morning hike along a shaded jungle path and historical stone steps, followed by a short rocky scramble near the crest. Ascent takes 30–45 mins to reach the breathtaking summit overlooking Sigiriya.",
+          "timing": "Early Morning (05:00 Start)",
+          "photos": [
+            {
+              "src": "assets/images/gallery/pidurangala-sunrise.jpg",
+              "alt": "Sweeping dawn sunrise view of Sigiriya Lion Rock rising from the mist from Pidurangala summit",
+              "caption": "Legendary sunrise panorama from the summit of Pidurangala Rock overlooking Sigiriya Lion Rock"
+            }
+          ]
+        },
+        {
+          "title": "Optional Experience — Sigiriya Lion Rock Fortress",
+          "description": "Travellers wishing to explore King Kashyapa's 5th-century royal sky citadel can climb Sigiriya, viewing the water gardens, mirror wall, famous frescoes, and lion paw terrace (optional excursion).",
+          "timing": "Morning (Optional)",
+          "photos": [
+            {
+              "src": "assets/images/destinations/sigiriya.jpg",
+              "alt": "The monolithic ancient rock citadel of Sigiriya rising 200 metres above surrounding jungle",
+              "caption": "Optional visit: Sigiriya Rock Fortress, the world-famous 5th-century UNESCO World Heritage sky palace"
+            }
+          ]
+        },
+        {
+          "title": "Optional Traditional Curry Feast & Village Bicycle Ride",
+          "description": "Enjoy an optional traditional Sri Lankan rice-and-curry lunch featuring more than 20 varieties of freshly prepared vegetable and meat curries (approx. €10 per person). Continue with a relaxed bicycle ride through a shaded local village.",
+          "timing": "Midday",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/sri-lankan-rice-curry.jpg",
+              "alt": "Traditional Sri Lankan rice and curry spread with clay bowls of fragrant curries and sambols",
+              "caption": "Optional authentic 20-curry traditional feast showcasing the rich culinary biodiversity of Sri Lanka"
+            }
+          ]
+        },
+        {
+          "title": "Dambulla Royal Cave Temple UNESCO World Heritage Site",
+          "description": "Ascend the sacred sloping rock of Dambulla to explore five magnificent ancient cave sanctuaries adorned with 2,100 square metres of sacred Buddhist murals, golden statues, and meditative rock architecture.",
+          "timing": "Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/destinations/dambulla.jpg",
+              "alt": "Golden stupa and ancient carved cave entrance at Dambulla Cave Temple monastery",
+              "caption": "Dambulla Royal Cave Temple, renowned for ancient painted ceilings, Buddha statues, and decorated caverns"
+            }
+          ]
+        },
+        {
+          "title": "Dambulla Economic Centre or Optional Ayurvedic Treatment",
+          "description": "If timing allows, visit the bustling Dambulla Dedicated Economic Centre wholesale produce hub, or enjoy an optional one-hour restorative Ayurvedic herbal treatment by advance reservation.",
+          "timing": "Late Afternoon",
+          "photos": []
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/gallery/pidurangala-sunrise.jpg",
+          "alt": "Sunrise at Pidurangala Rock",
+          "caption": "Dawn breaking over the Central Province forests from Pidurangala summit"
+        },
+        {
+          "src": "assets/images/destinations/dambulla.jpg",
+          "alt": "Dambulla Cave Temple entrance",
+          "caption": "Ancient monastic caverns preserved for over two millennia at Dambulla"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/sri-lankan-rice-curry.jpg",
+          "alt": "Sri Lankan rice and curry feast",
+          "caption": "A colourful array of traditional curries prepared with indigenous ingredients"
+        },
+        {
+          "src": "assets/images/destinations/sigiriya.jpg",
+          "alt": "Sigiriya Rock Fortress panoramic view",
+          "caption": "The majestic sheer silhouette of King Kashyapa's royal citadel"
+        }
+      ],
+      "overnight": "Habarana",
+      "travelNotes": "Local driving between Habarana, Sigiriya, and Dambulla (approx. 20–30 mins each way).",
+      "optionalActivities": "Sigiriya Rock Fortress admission tickets and climb; 20-variety curry lunch (~€10/pax); 1-hour Ayurvedic treatment.",
+      "practicalNotes": "Planning note: Pidurangala is the featured experience; the trail has uneven stone steps and the final boulder scramble requires reasonable fitness. Sturdy shoes with good grip and a flashlight are recommended. The summit has exposed rocky edges with limited barrier protection; exercise care especially after rain. Doing both Pidurangala and Sigiriya on the same day is physically demanding; agree final schedule in advance."
+    },
+    {
+      "day": 4,
+      "title": "Journey to Kandy | Spices, Culture & Sacred Heritage",
+      "subtitle": "Discover the flavours and spiritual traditions of Sri Lanka.",
+      "destination": "Matale & Kandy",
+      "introduction": "Travel south towards Kandy, Sri Lanka's cultural capital nestled amid lush mountain ridges. Stop en route in Matale to walk through a fragrant herbal spice garden, learning how cinnamon, cardamom, cloves, and vanilla are cultivated and used in Ayurvedic medicine. Enjoy an engaging culinary demonstration featuring traditional coconut pol roti and fresh bread served with aromatic fish and dhal curries, accompanied by a complimentary lunch, fresh fruits, and a cocktail as specified. In the evening, visit the revered Temple of the Sacred Tooth Relic, attend an energetic Kandyan cultural dance and drumming show, and finish at the scenic Kandy viewpoint.",
+      "activities": [
+        {
+          "title": "Scenic Drive to Kandy & Herbal Spice Garden Tour",
+          "description": "Travel through tropical hills to Matale, visiting a heritage spice and medicinal herb garden to discover Ceylon spices, healing botanicals, and Ayurvedic wellness traditions.",
+          "timing": "Morning",
+          "photos": []
+        },
+        {
+          "title": "Pol Roti Cooking Demonstration & Complimentary Lunch",
+          "description": "Watch a live cooking demonstration of traditional coconut pol roti and warm bread paired with savoury fish curry and dhal curry. Savor a complimentary lunch, tropical fruits, and a cocktail.",
+          "timing": "Midday",
+          "photos": []
+        },
+        {
+          "title": "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)",
+          "description": "Visit the golden-roofed sanctuary housing the sacred tooth relic of the Buddha. Experience the reverent atmosphere, drum-accompanied pooja ritual, and intricate Kandyan wood and brass craftsmanship.",
+          "timing": "Late Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/destinations/kandy.jpg",
+              "alt": "Sri Dalada Maligawa beside Kandy Lake bathed in golden late afternoon sunlight",
+              "caption": "The sacred Temple of the Tooth Relic in Kandy, one of the Buddhist world's most revered sanctuaries"
+            }
+          ]
+        },
+        {
+          "title": "Kandyan Cultural Performance & Arthur's Seat Viewpoint",
+          "description": "Witness an authentic cultural show featuring vibrant traditional dances, rhythmic drumming, and fire-walking. Conclude the day with sunset views over Kandy Lake from Arthur's Seat.",
+          "timing": "Evening",
+          "photos": [
+            {
+              "src": "assets/images/gallery/kandyan-dance.jpg",
+              "alt": "Traditional Kandyan dancers in ornate silver regalia performing ritual dances",
+              "caption": "Electrifying Kandyan cultural performance featuring acrobatic dance, fire, and rhythmic drumming"
+            },
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/kandy-viewpoint.jpg",
+              "alt": "Panoramic sunset perspective over Kandy Lake and city hills from Arthur's Seat viewpoint",
+              "caption": "Arthur's Seat viewpoint overlooking tranquil Kandy Lake and surrounding forested hills"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/destinations/kandy.jpg",
+          "alt": "Temple of the Tooth in Kandy",
+          "caption": "The spiritual sanctuary of Theravada Buddhism along the forested shores of Kandy Lake"
+        },
+        {
+          "src": "assets/images/gallery/kandyan-dance.jpg",
+          "alt": "Kandyan cultural dancers",
+          "caption": "Centuries-old ritual drumming and dances of the historic Hill Country Kingdom"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/kandy-viewpoint.jpg",
+          "alt": "Kandy panoramic viewpoint",
+          "caption": "Sweeping vista of Kandy Lake and the sacred city bathed in dusk light"
+        }
+      ],
+      "overnight": "Kandy",
+      "travelNotes": "Approx. 2.5 to 3 hours drive from Habarana to Kandy with planned spice garden stops.",
+      "optionalActivities": "Evening stroll around Kandy Lake or shopping for handcrafted brassware and batiks.",
+      "practicalNotes": "Temple dress code: Modest white or light-coloured attire covering shoulders and knees is mandatory. Shoes must be removed before entering the sacred temple precincts."
+    },
+    {
+      "day": 5,
+      "title": "Hidden Heritage & Panoramic Mountain Views",
+      "subtitle": "Discover remarkable architecture and Sri Lanka’s artistic heritage.",
+      "destination": "Gampola & Western Kandy Temples",
+      "introduction": "Uncover the architectural marvels and hidden medieval heritage of the Kandyan kingdom. Begin with an ascent to the astonishing Ambuluwawa Tower near Gampola, a spiralling white pinnacle rising from a 3,567-foot mountain summit with sweeping 360-degree vistas across evergreen cloud forests and misty mountain ranges. Continue to three historic 14th-century temples: Gadaladeniya, renowned for stone architecture influenced by South Indian dynasties; Embekka Devalaya, celebrated across Asia for its masterwork wooden pillar carvings; and Lankathilaka Viharaya, built atop a natural rock pedestal. Complete the day with a visit to a gem museum to admire world-renowned Ceylon sapphires.",
+      "activities": [
+        {
+          "title": "Ambuluwawa Biodiversity Complex & Spiral Tower",
+          "description": "Travel to Gampola to visit Ambuluwawa, Sri Lanka's multi-religious sanctuary perched high on an isolated mountain peak with dramatic spiral tower ascents and panoramic mountain views.",
+          "timing": "Morning",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/ambuluwawa-tower.jpg",
+              "alt": "The spiral white tower of Ambuluwawa rising into the sky surrounded by misty green mountains",
+              "caption": "The breathtaking spiral architecture of Ambuluwawa Tower commanding 360-degree mountain panoramas"
+            }
+          ]
+        },
+        {
+          "title": "Three Historic Temples: Embekka, Gadaladeniya & Lankathilaka",
+          "description": "Explore the artistic golden age of the 14th century: Embekka's timber hall with 514 intricate carved motifs, Gadaladeniya's carved stone sanctum, and the monumental hilltop architecture of Lankathilaka.",
+          "timing": "Midday & Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/embekka-wood-carvings.jpg",
+              "alt": "Intricately carved wooden pillars at Embekka Devalaya featuring mythical beasts and dancers",
+              "caption": "Remarkable 14th-century wooden pillar carvings and decorative timber pillars at Embekka Devalaya"
+            },
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/lankathilaka-temple.jpg",
+              "alt": "Majestic brick and granite temple of Lankathilaka Viharaya standing atop a rocky outcrop",
+              "caption": "Lankathilaka Temple, an architectural gem of the Gampola era admired for its rock-hewn grandeur"
+            }
+          ]
+        },
+        {
+          "title": "Ceylon Gem Museum & Lapidary Visit",
+          "description": "Discover Sri Lanka's legendary gemmological heritage, renowned since antiquity for cornflower blue sapphires, rubies, star stones, and artisanal gem cutting.",
+          "timing": "Late Afternoon",
+          "photos": []
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/ambuluwawa-tower.jpg",
+          "alt": "Ambuluwawa Tower and mountains",
+          "caption": "Ambuluwawa's spiral summit offering boundless views across central Sri Lanka"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/embekka-wood-carvings.jpg",
+          "alt": "Wood carvings at Embekka Devalaya",
+          "caption": "Exquisite medieval timber craftsmanship preserved at Embekka Devalaya"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/lankathilaka-temple.jpg",
+          "alt": "Lankathilaka Viharaya",
+          "caption": "The hilltop sanctuary of Lankathilaka overlooking fertile green valleys"
+        }
+      ],
+      "overnight": "Accommodation to be confirmed",
+      "travelNotes": "Leisurely exploration around the Gampola and Pilimathalawa valleys (approx. 1.5 to 2 hours driving total).",
+      "optionalActivities": "Handicraft shopping in Pilimathalawa (traditional brassware village).",
+      "practicalNotes": "The spiral staircase around Ambuluwawa Tower narrows near the peak and may not be suitable for travellers with severe vertigo. Temple etiquette applies at all religious shrines."
+    },
+    {
+      "day": 6,
+      "title": "Into the Hill Country | Tea Plantations & Nuwara Eliya",
+      "subtitle": "Discover misty mountains and world-famous tea country.",
+      "destination": "Ramboda & Nuwara Eliya",
+      "introduction": "Ascend into the cool highlands as winding roads climb through emerald hills, deep river gorges, and terraced slopes blanketed by manicured tea bushes. Pause to admire cascading mountain waterfalls such as Ramboda Falls plunging against dark granite. Tour an operating high-grown Ceylon tea plantation and historic factory to discover how the world's finest tea is plucked, withered, rolled, and fired, completing the visit with a private tea tasting. Continue into Nuwara Eliya, Sri Lanka's 'Little England', known for crisp mountain air, colonial-era bungalows, manicured gardens, and the iconic red-brick Nuwara Eliya Post Office.",
+      "activities": [
+        {
+          "title": "Scenic Mountain Journey & Ramboda Waterfall Stop",
+          "description": "Ascend winding highland passes with dramatic views across mist-draped peaks, stopping to photograph the roaring tiers of Ramboda Falls plunging 109 metres down the valley.",
+          "timing": "Morning",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/ramboda-falls.jpg",
+              "alt": "Ramboda Falls plunging down steep green mountain cliffs in the Sri Lankan hill country",
+              "caption": "Scenic waterfall stops along the dramatic hill-country ascent towards Nuwara Eliya"
+            }
+          ]
+        },
+        {
+          "title": "Working Tea Plantation & Factory Experience",
+          "description": "Walk among the tea bushes and explore a working factory to witness the artisan orthodox tea-making process from freshly plucked green leaf to graded black tea, followed by a tea tasting.",
+          "timing": "Midday",
+          "photos": [
+            {
+              "src": "assets/images/destinations/nuwara-eliya.jpg",
+              "alt": "Lush manicured green tea terraces spreading across misty highland hills in Nuwara Eliya",
+              "caption": "Lush emerald tea estates carpeting the cool misty hillsides of the central highlands"
+            },
+            {
+              "src": "assets/images/gallery/tea-factory.jpg",
+              "alt": "Freshly plucked tea leaves withering on wooden racks inside a historic Ceylon tea factory",
+              "caption": "Traditional orthodox tea-making experience inside a working highland Ceylon tea factory"
+            }
+          ]
+        },
+        {
+          "title": "Nuwara Eliya Colonial Tour & Historic Post Office",
+          "description": "Discover Nuwara Eliya's heritage, admiring Tudor-style colonial architecture, Victoria Park, Lake Gregory, and the red-brick 1894 Nuwara Eliya Post Office.",
+          "timing": "Late Afternoon",
+          "photos": []
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/destinations/nuwara-eliya.jpg",
+          "alt": "Nuwara Eliya tea plantations",
+          "caption": "Endless rows of high-grown Ceylon tea nurtured in the cool mountain climate"
+        },
+        {
+          "src": "assets/images/gallery/tea-factory.jpg",
+          "alt": "Tea factory withering lofts",
+          "caption": "Artisan tea-making traditions handed down through generations"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/ramboda-falls.jpg",
+          "alt": "Ramboda Falls waterfall",
+          "caption": "Ramboda Falls cascading down verdant slopes along the mountain route"
+        }
+      ],
+      "overnight": "Nuwara Eliya",
+      "travelNotes": "Approx. 2.5 to 3 hours winding ascent from Kandy (500m) to Nuwara Eliya (1,868m altitude).",
+      "optionalActivities": "Boating on Lake Gregory, golf club tea, or an evening stroll along colonial streets.",
+      "practicalNotes": "Highland climate: Evening temperatures frequently dip between 10°C and 16°C. A light jacket or warm sweater is strongly recommended."
+    },
+    {
+      "day": 7,
+      "title": "Scenic Train Journey | Nanu Oya to Ella",
+      "subtitle": "A spectacular railway adventure through the heart of Sri Lanka.",
+      "destination": "Nanu Oya to Ella",
+      "introduction": "Board the world-famous highland train at Nanu Oya railway station for one of the planet's most celebrated rail journeys. As the vintage train chugs gracefully along high-altitude ridges, gaze out the open doors and windows at sweeping tea plantations, cascading waterfalls, cloud forests, and charming mountain hamlets. Upon arriving in the scenic mountain town of Ella, visit the iconic Nine Arch Bridge, an engineering marvel constructed entirely of brick, stone, and cement amidst dense jungle. Later, take an unhurried hike up Little Adam's Peak for panoramic views across the sweeping Ella Gap.",
+      "activities": [
+        {
+          "title": "The Legendary Hill Country Train Journey (Nanu Oya to Ella)",
+          "description": "Board the blue passenger train for a breathtaking 2.5 to 3 hour railway adventure traversing mountain viaducts, cloud-wrapped ridges, and verdant tea estates.",
+          "timing": "Morning / Midday (Subject to timetable)",
+          "photos": [
+            {
+              "src": "assets/images/destinations/scenic-train.jpg",
+              "alt": "Iconic blue passenger train travelling across bridges and emerald tea hills in Sri Lanka",
+              "caption": "The celebrated scenic train journey travelling along high-altitude mountain railways to Ella"
+            }
+          ]
+        },
+        {
+          "title": "Demodara Nine Arch Bridge Walk & Photography",
+          "description": "Stroll down through lush tea gardens to stand beneath the monumental Nine Arch Bridge, watching the trains cross the colonial stone viaduct surrounded by tropical jungle.",
+          "timing": "Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/destinations/ella.jpg",
+              "alt": "The iconic Nine Arch Bridge in Ella surrounded by dense greenery and tea bushes",
+              "caption": "The iconic Nine Arch Bridge in Ella, a colonial railway masterpiece enveloped by lush greenery"
+            }
+          ]
+        },
+        {
+          "title": "Little Adam's Peak Scenic Ridge Hike",
+          "description": "Take a gentle, rewarding walk along the crest of Little Adam's Peak (Punchi Sri Pada), soaking in 360-degree vistas across Ella Rock and the deep southern valleys.",
+          "timing": "Late Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/gallery/little-adams-peak.jpg",
+              "alt": "Green mountain path along the ridge of Little Adam's Peak with panoramic valley views",
+              "caption": "Little Adam's Peak hike yielding breathtaking panoramic views across the Ella Gap"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/destinations/scenic-train.jpg",
+          "alt": "Highland train in Sri Lanka",
+          "caption": "Unforgettable rail journey through misty mountain passes and eucalyptus groves"
+        },
+        {
+          "src": "assets/images/destinations/ella.jpg",
+          "alt": "Nine Arch Bridge in Ella",
+          "caption": "The colonial stone viaduct of Demodara spanning a verdant gorge"
+        },
+        {
+          "src": "assets/images/gallery/little-adams-peak.jpg",
+          "alt": "Little Adam's Peak trail",
+          "caption": "Sweeping mountain panoramas from the summit ridge of Little Adam's Peak"
+        }
+      ],
+      "overnight": "Accommodation to be confirmed",
+      "travelNotes": "Train journey takes approx. 2.5 to 3 hours. Your private chauffeur transports your main luggage by road directly to Ella.",
+      "optionalActivities": "Zipline adventure at Flying Ravana or evening café dining in Ella village.",
+      "practicalNotes": "Planning note: Train tickets and preferred seating should be arranged in advance, subject to Sri Lanka Railways ticket reservation availability."
+    },
+    {
+      "day": 8,
+      "title": "Ravana Falls & The Diyaluma Waterfall Adventure",
+      "subtitle": "Experience the natural beauty and adventurous spirit of Sri Lanka.",
+      "destination": "Ella, Koslanda & Udawalawe",
+      "introduction": "Begin your morning with a visit to Ravana Falls, one of the most famous and mythologically rich cascades in the Ella region. Continue south to Diyaluma Falls, Sri Lanka's second-highest waterfall plunging 220 metres down sheer rock cliffs into a dramatic valley. Enjoy a guided waterfall hike through scenic pine forests and rocky paths to appreciate the dramatic cascade and view the natural rock pools from safe, permitted vantage points. Savor a complimentary planned picnic lunch and one cold beer amidst magnificent mountain scenery, before descending towards the savannah plains of Udawalawe.",
+      "activities": [
+        {
+          "title": "Morning Visit to Roaring Ravana Falls",
+          "description": "Drive down the dramatic Ella-Wellawaya gap to admire the multi-tiered cascades of Ravana Falls, surrounded by lush mountain vegetation and boulder formations.",
+          "timing": "Morning (08:30)",
+          "photos": [
+            {
+              "src": "assets/images/gallery/ravana-falls.jpg",
+              "alt": "Multi-tiered torrents of Ravana Falls tumbling down rocky cliffs near Ella",
+              "caption": "Morning visit to Ravana Falls, one of the best-known cascades in the Ella mountain region"
+            }
+          ]
+        },
+        {
+          "title": "Diyaluma Falls Guided Waterfall Hike & Natural Pool Views",
+          "description": "Explore Diyaluma Falls with a local guide, taking in wide panoramic views of the main 220m drop from below, followed by hiking along upper scenic trails to appreciate the cascading natural rock pools where safe and permitted.",
+          "timing": "Mid-Morning to Early Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/experiences/diyaluma-falls.jpg",
+              "alt": "Wide panoramic photograph of Diyaluma Falls plunging down massive rock amphitheatre",
+              "caption": "A wide panoramic photograph of Diyaluma Falls, one of Sri Lanka's tallest and most majestic waterfalls"
+            },
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/diyaluma-upper-pools.jpg",
+              "alt": "Upper Diyaluma waterfall cascade showing natural rocky pools and mountain hiking terrain",
+              "caption": "A different perspective showing Diyaluma's upper natural pools and scenic waterfall hiking landscape"
+            }
+          ]
+        },
+        {
+          "title": "Planned Waterfall Picnic Lunch & Complimentary Beer",
+          "description": "Enjoy a relaxing picnic lunch surrounded by fresh mountain breezes and rushing water, complete with one complimentary beer as specified in the package.",
+          "timing": "Midday",
+          "photos": []
+        },
+        {
+          "title": "Scenic Descent to Udawalawe Plains",
+          "description": "Transition from cool mountainous slopes down into the warm, open dry-zone savannahs and agricultural reservoir lands of Udawalawe.",
+          "timing": "Late Afternoon",
+          "photos": []
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/experiences/diyaluma-falls.jpg",
+          "alt": "Wide panoramic Diyaluma Falls",
+          "caption": "Panoramic view of Diyaluma Falls cascading 220m into the Koslanda gorge"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/diyaluma-upper-pools.jpg",
+          "alt": "Upper Diyaluma natural pools and trail",
+          "caption": "Upper Diyaluma natural cascading rock pools and surrounding highland hiking trails"
+        },
+        {
+          "src": "assets/images/gallery/ravana-falls.jpg",
+          "alt": "Ravana Falls multi-tiered cascade",
+          "caption": "The thundering cascades of Ravana Falls framed by dramatic mountain boulders"
+        }
+      ],
+      "overnight": "Udawalawe area",
+      "travelNotes": "Approx. 2.5 hours total driving time from Ella through Koslanda to the Udawalawe plains.",
+      "optionalActivities": "Relaxation at safari camp / eco-lodge in Udawalawe.",
+      "practicalNotes": "Planning note: Access to waterfall pools and certain hiking areas depends strictly on weather, water levels, and local safety conditions. Slippery rocks require sturdy footwear. Do not swim or enter natural pools when water levels are elevated or when advised against by your guide."
+    },
+    {
+      "day": 9,
+      "title": "Udawalawe Safari & Southern Coastal Discovery",
+      "subtitle": "Meet Sri Lanka’s wildlife before discovering the southern coast.",
+      "destination": "Udawalawe, Galle & Mirissa",
+      "introduction": "Start early with an exhilarating wildlife safari in Udawalawe National Park, renowned as one of Asia's finest destinations for observing wild Asian elephants in large numbers. Travel across open grasslands and reservoir banks in an open 4x4 jeep, spotting elephants, water buffalo, sambar deer, crocodiles, and raptors. Continue with a visit to the scheduled elephant-feeding experience, subject to facility availability and ethical welfare standards. Afterwards, journey south to the coastal ramparts of UNESCO-listed Galle Fort, discover Mirissa's Coconut Tree Hill, and marvel at traditional stilt fishermen perched above the breaking ocean surf.",
+      "activities": [
+        {
+          "title": "Udawalawe National Park 4x4 Wildlife Safari",
+          "description": "Embark on an open safari across the savannah grasslands and reservoir edges of Udawalawe, encountering wild elephant herds, jackals, crested serpent eagles, and basking crocodiles.",
+          "timing": "Early Morning (06:00 – 09:30)",
+          "photos": [
+            {
+              "src": "assets/images/destinations/udawalawe.jpg",
+              "alt": "Herds of wild Asian elephants grazing peacefully in open grasslands at Udawalawe National Park",
+              "caption": "Wild elephants grazing in open grassland habitats during the Udawalawe National Park safari"
+            }
+          ]
+        },
+        {
+          "title": "Scheduled Elephant-Feeding Experience (Transit Home)",
+          "description": "Witness the scheduled feeding of rehabilitated juvenile elephants from an observation platform, subject to the availability and ethical welfare practices of the facility.",
+          "timing": "Mid-Morning",
+          "photos": []
+        },
+        {
+          "title": "UNESCO World Heritage Galle Fort Walking Tour",
+          "description": "Explore 400 years of living colonial heritage: 17th-century granite sea ramparts, the whitewashed lighthouse, Dutch Reformed churches, boutique lanes, and oceanfront viewpoints.",
+          "timing": "Early Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/destinations/galle.jpg",
+              "alt": "Galle Fort white colonial lighthouse and ancient granite ramparts meeting the Indian Ocean",
+              "caption": "Historic Galle Fort, a UNESCO World Heritage Site with colonial ramparts and ocean viewpoints"
+            },
+            {
+              "src": "assets/images/gallery/galle-street.jpg",
+              "alt": "Charming colonial street with Dutch architecture and bougainvillea inside Galle Fort",
+              "caption": "Atmospheric colonial streets and historic architecture preserved within Galle Fort"
+            }
+          ]
+        },
+        {
+          "title": "Mirissa Coconut Tree Hill & Traditional Stilt Fishing",
+          "description": "Visit Coconut Tree Hill in Mirissa, a famous reddish-clay promontory dotted with curved coconut palms overlooking turquoise seas, and observe the ancient tradition of coastal stilt fishing.",
+          "timing": "Late Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/destinations/mirissa.jpg",
+              "alt": "Tall curved coconut palms on the red bluff of Coconut Tree Hill overlooking the sea in Mirissa",
+              "caption": "Mirissa's picturesque Coconut Tree Hill offering sweeping views across the Indian Ocean"
+            },
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/stilt-fishermen.jpg",
+              "alt": "Traditional Sri Lankan fishermen balanced on wooden stilts fishing in the breaking coastal surf",
+              "caption": "Artisanal fishermen practicing the traditional art of stilt fishing along the southern coastline"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/destinations/udawalawe.jpg",
+          "alt": "Wild elephants in Udawalawe",
+          "caption": "Gentle giants socialising freely around the water holes of Udawalawe"
+        },
+        {
+          "src": "assets/images/destinations/galle.jpg",
+          "alt": "Galle Fort Lighthouse",
+          "caption": "The colonial sentinel of Galle Fort standing watch over the southern ocean"
+        },
+        {
+          "src": "assets/images/destinations/mirissa.jpg",
+          "alt": "Coconut Tree Hill in Mirissa",
+          "caption": "Iconic coastal headland fringed by swaying tropical palms in Mirissa"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/stilt-fishermen.jpg",
+          "alt": "Traditional stilt fishing",
+          "caption": "Generations of coastal heritage preserved on the southern reefs"
+        }
+      ],
+      "overnight": "Accommodation to be confirmed",
+      "travelNotes": "Approx. 2 hours drive from Udawalawe to Galle Fort; 45 minutes along coastal roads between Galle and Mirissa.",
+      "optionalActivities": "Sunset cocktails on Mirissa beach or boutique shopping in Galle Fort.",
+      "practicalNotes": "Planning note: Check travel times and activity durations for Udawalawe, Galle and Mirissa. Your guide coordinates schedules to ensure comfortable pacing."
+    },
+    {
+      "day": 10,
+      "title": "Madu River Safari, Turtle Conservation & Coastal Flavours",
+      "subtitle": "Explore coastal waterways and discover Sri Lanka’s marine heritage.",
+      "destination": "Balapitiya & Kosgoda",
+      "introduction": "Explore the rich coastal wetlands and marine sanctuaries of Sri Lanka's south-west coast. Board a motorboat for an approximately 1.5-hour safari along the tranquil Madu River (Madu Ganga), a Ramsar wetland sanctuary encompassing 64 islands, intricate mangrove tunnels, and traditional cinnamon-peeling hamlets. Next, visit a sea turtle conservation centre to learn about the five species of endangered sea turtles that nest on Sri Lankan beaches and the vital conservation work protecting them. Conclude the day with a delectable coastal seafood lunch accompanied by one complimentary beer as specified in the package.",
+      "activities": [
+        {
+          "title": "Madu River Mangrove Boat Safari (1.5 Hours)",
+          "description": "Navigate through arching natural mangrove tunnels, discover rich estuarine biodiversity, observe cormorants and water monitors, and witness traditional cinnamon cultivation.",
+          "timing": "Morning",
+          "photos": [
+            {
+              "src": "assets/images/gallery/madu-ganga-river.jpg",
+              "alt": "Wooden motorboat gliding beneath dense green mangrove tunnels on the Madu River",
+              "caption": "A boat travelling through the lush Madu River mangroves, exploring coastal waterway ecosystems"
+            }
+          ]
+        },
+        {
+          "title": "Sea Turtle Conservation Centre & Hatchery",
+          "description": "Visit a community-led sea turtle conservation facility dedicated to rescuing injured turtles, protecting nesting sites, and releasing newborn hatchlings safely back to the ocean.",
+          "timing": "Midday",
+          "photos": [
+            {
+              "src": "assets/images/gallery/turtle-conservation.jpg",
+              "alt": "Rescued green sea turtle swimming in a protected marine rehabilitation pool",
+              "caption": "Sea turtle conservation centre learning about endangered marine turtles and preservation efforts"
+            }
+          ]
+        },
+        {
+          "title": "Coastal Seafood Lunch with Complimentary Beer",
+          "description": "Indulge in a fresh seafood lunch featuring local coastal flavours, fresh ocean catch, and Ceylon lagoon crab, accompanied by one complimentary cold beer.",
+          "timing": "Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/coastal-seafood.jpg",
+              "alt": "Freshly cooked Sri Lankan coastal seafood dish with fragrant local spices",
+              "caption": "Authentic coastal seafood lunch featuring fresh catch from Sri Lanka's southern shores"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/gallery/madu-ganga-river.jpg",
+          "alt": "Madu River mangrove safari",
+          "caption": "Gliding beneath natural mangrove arches on the biodiverse Madu Ganga"
+        },
+        {
+          "src": "assets/images/gallery/turtle-conservation.jpg",
+          "alt": "Sea turtle in rehabilitation pool",
+          "caption": "Protecting endangered marine turtles nesting on warm southern shores"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/coastal-seafood.jpg",
+          "alt": "Sri Lankan coastal seafood lunch",
+          "caption": "Delicious coastal seafood feast prepared with rich coconut and roasted curry spices"
+        }
+      ],
+      "overnight": "Accommodation to be confirmed",
+      "travelNotes": "Scenic coastal highway driving connecting Balapitiya, Kosgoda, and beachside hotel areas.",
+      "optionalActivities": "Natural fish therapy foot bath on the Madu River or swimming in the ocean.",
+      "practicalNotes": "Bring sunscreen, sunglasses, and a hat for the open-top boat ride. Support ethical marine conservation practices by following visitor guidelines."
+    },
+    {
+      "day": 11,
+      "title": "Negombo’s Local Culture & Beachside Relaxation",
+      "subtitle": "Discover coastal traditions before settling into your tropical beach escape.",
+      "destination": "Negombo",
+      "introduction": "Travel north along the western coastline towards Negombo, an atmospheric coastal town renowned for its centuries-old fishing heritage, vibrant lagoon, sandy beaches, and Dutch and Portuguese colonial influences. Visit the bustling Negombo fish market (Lellama) to observe the lively trade and traditional outrigger catamarans bringing in fresh catches of tuna, seer fish, and prawns. Explore a historic local church such as St. Mary's Church, reflecting Negombo's deep religious heritage. Afterward, check into your beach accommodation and embrace the laid-back atmosphere of Sri Lanka's western coastline.",
+      "activities": [
+        {
+          "title": "Journey North to Coastal Negombo",
+          "description": "Comfortable drive along the coastal corridor towards the bustling fishing town of Negombo, checking in to your seaside accommodation.",
+          "timing": "Morning",
+          "photos": []
+        },
+        {
+          "title": "Negombo Traditional Fish Market & Fishing Heritage",
+          "description": "Visit the lively oceanfront fish market, discovering traditional fishing methods, rows of sun-dried fish, and fishermen unloading their catches from handcrafted outrigger catamarans.",
+          "timing": "Midday",
+          "photos": [
+            {
+              "src": "assets/images/gallery/negombo-lagoon.jpg",
+              "alt": "Handcrafted wooden outrigger catamarans resting on the sandy shores of Negombo lagoon",
+              "caption": "Traditional wooden outrigger catamarans resting along Negombo's historic shoreline"
+            },
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-fish-market.jpg",
+              "alt": "Active bustling fish stalls at Negombo fish market with fishermen and sea catch",
+              "caption": "Negombo fish market showcasing the town's vibrant artisanal fishing heritage"
+            }
+          ]
+        },
+        {
+          "title": "Visit to Historic St. Mary's Church in Negombo",
+          "description": "Step inside one of Negombo's most renowned cultural landmarks, admiring grand neoclassical architecture, religious frescoes, and ceiling paintings.",
+          "timing": "Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/st-marys-church-negombo.jpg",
+              "alt": "Grand neoclassical facade and towers of historic St. Mary's Church in Negombo",
+              "caption": "Historic St. Mary's Church in Negombo, showcasing the town's rich religious and architectural heritage"
+            }
+          ]
+        },
+        {
+          "title": "Beachside Hotel Check-In & Coastal Relaxation",
+          "description": "Settle into your beachfront hotel room and spend the late afternoon listening to the gentle ocean waves and watching the sunset.",
+          "timing": "Late Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-beach.jpg",
+              "alt": "Golden sunset over the ocean waves and sandy shoreline of Negombo beach",
+              "caption": "Golden-hour sands and refreshing ocean breezes on Negombo beach"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/gallery/negombo-lagoon.jpg",
+          "alt": "Negombo fishing catamarans",
+          "caption": "Artisanal fishing catamarans resting along the tranquil Negombo lagoon"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-fish-market.jpg",
+          "alt": "Negombo fish market",
+          "caption": "Lively fish trade and drying fish on the sandy shores of Negombo"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/st-marys-church-negombo.jpg",
+          "alt": "St. Mary's Church Negombo",
+          "caption": "Colonial-era architecture and religious artistry at historic St. Mary's Church"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-beach.jpg",
+          "alt": "Negombo beach at sunset",
+          "caption": "Relaxing coastal atmosphere welcoming you to western Sri Lanka"
+        }
+      ],
+      "overnight": "Negombo",
+      "travelNotes": "Approx. 2 hours highway drive from southern coastal areas to Negombo via expressway.",
+      "optionalActivities": "Evening beachfront dinner with fresh grilled lobster or a sunset stroll along Porutota Road.",
+      "practicalNotes": "Planning note: Confirm the exact historic church to be visited with your guide to coordinate around active church service times."
+    },
+    {
+      "day": 12,
+      "title": "Tropical Beach Escape",
+      "subtitle": "Slow down and enjoy the beauty of Sri Lanka’s coastline.",
+      "destination": "Negombo Beach",
+      "introduction": "Dedicate this full day entirely to restorative leisure at your beachside accommodation in Negombo. After twelve days of exhilarating discovery across ancient citadels, tea estates, safaris, and waterfalls, slow down your pace. Unwind beside the Indian Ocean, stroll along the expansive golden sandy beach, read under swaying palm trees, or take a refreshing swim in the hotel pool. If you feel adventurous, independently explore the bustling streets of Negombo, browse souvenir boutiques, or sample tropical street snacks at your leisure.",
+      "activities": [
+        {
+          "title": "Unhurried Beachside Leisure & Ocean Walks",
+          "description": "Wake to the soothing sound of breaking waves. Enjoy an unhurried breakfast and spend the morning lounging beside the ocean or taking long barefoot walks on the warm sand.",
+          "timing": "Morning",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-beach.jpg",
+              "alt": "Pristine sandy beach with coconut palms swaying in the ocean breeze in Sri Lanka",
+              "caption": "A beautiful Sri Lankan tropical beach providing the perfect setting for rest and unhurried beach walks"
+            }
+          ]
+        },
+        {
+          "title": "Hotel Relaxation or Optional Negombo Exploration",
+          "description": "Relax poolside with chilled coconut water, indulge in an optional spa therapy, or take an independent tuk-tuk to explore Negombo town's local shops and cafes.",
+          "timing": "Afternoon",
+          "photos": [
+            {
+              "src": "assets/images/gallery/mirissa-sunset.jpg",
+              "alt": "Tranquil ocean view with gentle waves and palm trees bathed in soft afternoon light",
+              "caption": "Peaceful ocean view and serene beachside relaxation at your coastal resort"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-beach.jpg",
+          "alt": "Tropical beach in Sri Lanka",
+          "caption": "Warm golden sands and tropical sea breezes on Sri Lanka's western coast"
+        },
+        {
+          "src": "assets/images/gallery/mirissa-sunset.jpg",
+          "alt": "Peaceful ocean relaxation",
+          "caption": "A slower rhythm to soak in the tropical atmosphere at your own pace"
+        }
+      ],
+      "overnight": "Negombo",
+      "travelNotes": "Zero long-distance travel. Your private vehicle and guide remain on standby for local errands.",
+      "optionalActivities": "Ayurvedic body massage, water sports, or an independent seaside café dinner.",
+      "practicalNotes": "Keep hydrated in the coastal tropical sun. Sunscreen, hats, and sunglasses are recommended."
+    },
+    {
+      "day": 13,
+      "title": "A Final Day in Paradise",
+      "subtitle": "Enjoy your last full day of Sri Lankan hospitality.",
+      "destination": "Negombo Beach",
+      "introduction": "Embrace your final full day on this magical teardrop island. Savor a peaceful morning watching the ocean horizon, relish tropical fruits and authentic Ceylon tea, and spend your hours exactly as you wish. Reflect on two weeks of rich memories—from climbing ancient rock summits and tasting estate tea to spotting wild elephants and standing beneath thundering waterfalls. Enjoy a memorable farewell sunset as the sky turns fiery crimson over the Indian Ocean, followed by a delightful seaside dinner.",
+      "activities": [
+        {
+          "title": "Serene Morning by the Ocean",
+          "description": "Enjoy an unhurried breakfast overlooking the Indian Ocean. Take a final morning swim in the sea or pool, and enjoy personal leisure time in your resort.",
+          "timing": "Morning",
+          "photos": [
+            {
+              "src": "assets/images/destinations/mirissa.jpg",
+              "alt": "Lush tropical coastal scenery with tall palms and breaking blue ocean surf",
+              "caption": "Tropical coastal scenery and peaceful beachside setting for your final full day in paradise"
+            }
+          ]
+        },
+        {
+          "title": "Personal Leisure & Farewell Memories",
+          "description": "Free time for last-minute souvenir shopping, packing, enjoying local coastal food, or relaxing with your loved ones beside the waves.",
+          "timing": "Afternoon",
+          "photos": []
+        },
+        {
+          "title": "Golden-Hour Coastal Sunset & Final Evening",
+          "description": "Celebrate your last evening in Sri Lanka with a breathtaking coastal sunset over the horizon, followed by a celebratory farewell dinner enjoying warm island hospitality.",
+          "timing": "Evening",
+          "photos": [
+            {
+              "src": "assets/images/gallery/mirissa-sunset.jpg",
+              "alt": "Radiant golden hour sunset casting warm amber glow across the tropical beach and palm silhouettes",
+              "caption": "A beautiful Sri Lankan coastal sunset illuminating the golden sands during your final evening in paradise"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/gallery/mirissa-sunset.jpg",
+          "alt": "Sri Lankan coastal sunset",
+          "caption": "Golden-hour farewell sunset casting warm amber light across the ocean"
+        },
+        {
+          "src": "assets/images/destinations/mirissa.jpg",
+          "alt": "Tropical coastal scenery",
+          "caption": "Gentle ocean breezes to celebrate the closing chapter of your 14-day grand discovery"
+        }
+      ],
+      "overnight": "Negombo",
+      "travelNotes": "No scheduled highway driving. Vehicle available for local dining or boutique transfers.",
+      "optionalActivities": "Celebratory candlelit seafood dinner on the beach.",
+      "practicalNotes": "Organize your baggage and ensure your passports, flight tickets, and departure details are readily accessible for tomorrow's transfer."
+    },
+    {
+      "day": 14,
+      "title": "Farewell to Sri Lanka",
+      "subtitle": "Take home unforgettable memories.",
+      "destination": "Bandaranaike International Airport (CMB)",
+      "introduction": "Enjoy your final morning in Sri Lanka with breakfast and a lingering look across the Indian Ocean before checking out of your hotel. Your private chauffeur-guide will provide a smooth, scheduled transfer to Bandaranaike International Airport (CMB) in good time for your flight home. As your journey comes to an end, take home lifelong memories of ancient heritage, vibrant culture, remarkable wildlife, misty mountain landscapes, authentic cuisine, and the warm hospitality of Sri Lanka.",
+      "activities": [
+        {
+          "title": "Hotel Check-Out & Fond Farewell",
+          "description": "Complete hotel checkout and bid farewell to the friendly hotel team after two weeks of unforgettable island discovery.",
+          "timing": "Morning (Tailored to flight departure)",
+          "photos": [
+            {
+              "src": "assets/images/experiences/ceylon-landscape-closing.jpg",
+              "alt": "Breathtaking panoramic Sri Lankan landscape bathed in golden morning light communicating a memorable farewell",
+              "caption": "A breathtaking Sri Lankan landscape communicating an unforgettable farewell and lifelong memories of Ceylon"
+            }
+          ]
+        },
+        {
+          "title": "Scheduled Private Airport Transfer & Departure",
+          "description": "Your private executive vehicle transfers you punctually to Bandaranaike International Airport (CMB). Your chauffeur-guide assists with luggage drop-off before your onward flight.",
+          "timing": "3 Hours Prior to Flight",
+          "photos": [
+            {
+              "src": "assets/images/tours/golden-pearl-of-sri-lanka/airport-departure.jpg",
+              "alt": "Bandaranaike International Airport departure terminal in Sri Lanka",
+              "caption": "Smooth, punctual departure transfer to Bandaranaike International Airport (CMB) for your journey home"
+            },
+            {
+              "src": "assets/images/vehicles/private-car.jpg",
+              "alt": "Executive tour vehicle ready for airport transfer",
+              "caption": "Comfortable private executive transfer concluding your 14-day discovery with SL Mango Exotic Tours"
+            }
+          ]
+        }
+      ],
+      "dayGallery": [
+        {
+          "src": "assets/images/experiences/ceylon-landscape-closing.jpg",
+          "alt": "Memorable Sri Lankan landscape farewell",
+          "caption": "Lifelong memories of ancient heritage, emerald tea hills, and wild beauty"
+        },
+        {
+          "src": "assets/images/tours/golden-pearl-of-sri-lanka/airport-departure.jpg",
+          "alt": "Airport departure terminal",
+          "caption": "Punctual, stress-free transfer to Bandaranaike International Airport"
+        },
+        {
+          "src": "assets/images/vehicles/private-car.jpg",
+          "alt": "Private tour vehicle",
+          "caption": "Dedicated private chauffeur-guide care from your arrival to your farewell"
+        }
+      ],
+      "overnight": "Departure (Homebound Flight)",
+      "travelNotes": "Approx. 20–25 minutes drive from Negombo beach hotels to Bandaranaike International Airport (CMB).",
+      "optionalActivities": "Duty-free shopping at the airport terminal (Ceylon tea, handicrafts, spices).",
+      "practicalNotes": "Standard international flight check-in opens 3 hours prior to departure. Have your passport and travel documents ready."
+    }
+  ],
+  "destinationGallery": [
+    {
+      "id": "gp-gal-01",
+      "title": "Sigiriya Lion Rock Citadel",
+      "category": "culture",
+      "categoryLabel": "Culture & Heritage",
+      "image": "assets/images/destinations/sigiriya.jpg",
+      "thumb": "assets/images/destinations/sigiriya.jpg",
+      "alt": "Ancient 5th-century palace fortress of Sigiriya rising above the jungle canopy",
+      "caption": "King Kashyapa's royal citadel rising 200m above the forested plains of the Cultural Triangle."
+    },
+    {
+      "id": "gp-gal-02",
+      "title": "Temple of the Sacred Tooth Relic",
+      "category": "culture",
+      "categoryLabel": "Culture & Heritage",
+      "image": "assets/images/destinations/kandy.jpg",
+      "thumb": "assets/images/destinations/kandy.jpg",
+      "alt": "Sri Dalada Maligawa beside Kandy Lake",
+      "caption": "The spiritual sanctuary of Theravada Buddhism nestled along the forested lake shore in Kandy."
+    },
+    {
+      "id": "gp-gal-03",
+      "title": "Dambulla Royal Cave Temple",
+      "category": "culture",
+      "categoryLabel": "Culture & Heritage",
+      "image": "assets/images/destinations/dambulla.jpg",
+      "thumb": "assets/images/destinations/dambulla.jpg",
+      "alt": "Golden stupa and ancient cave entrance beneath an overhanging granite mountain",
+      "caption": "Two millennia of Buddhist devotion preserved in five vast painted cavern sanctuaries."
+    },
+    {
+      "id": "gp-gal-04",
+      "title": "Embekka Devalaya Wood Carvings",
+      "category": "culture",
+      "categoryLabel": "Culture & Heritage",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/embekka-wood-carvings.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/embekka-wood-carvings.jpg",
+      "alt": "Intricately carved wooden pillars at Embekka Devalaya",
+      "caption": "Exquisite 14th-century wood carvings of dancers and mythical beasts at Embekka Devalaya."
+    },
+    {
+      "id": "gp-gal-05",
+      "title": "Ambuluwawa Biodiversity Pinnacle",
+      "category": "culture",
+      "categoryLabel": "Culture & Heritage",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/ambuluwawa-tower.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/ambuluwawa-tower.jpg",
+      "alt": "Spiral white tower of Ambuluwawa on mountain summit",
+      "caption": "Distinctive architectural spiral tower at Gampola offering 360-degree mountain panoramas."
+    },
+    {
+      "id": "gp-gal-06",
+      "title": "Galle Fort Ramparts & Lighthouse",
+      "category": "culture",
+      "categoryLabel": "Culture & Heritage",
+      "image": "assets/images/destinations/galle.jpg",
+      "thumb": "assets/images/destinations/galle.jpg",
+      "alt": "White lighthouse at Galle Fort on granite sea ramparts",
+      "caption": "17th-century Dutch colonial fortifications and lighthouse meeting the turquoise Indian Ocean."
+    },
+    {
+      "id": "gp-gal-07",
+      "title": "Wild Elephants in Udawalawe",
+      "category": "wildlife",
+      "categoryLabel": "Wildlife Safari",
+      "image": "assets/images/destinations/udawalawe.jpg",
+      "thumb": "assets/images/destinations/udawalawe.jpg",
+      "alt": "Wild Asian elephant family grazing peaceably in open savannah grasses",
+      "caption": "Wild Asian elephants roaming free across the savannah grasslands of Udawalawe National Park."
+    },
+    {
+      "id": "gp-gal-08",
+      "title": "Habarana Elephant Corridor",
+      "category": "wildlife",
+      "categoryLabel": "Wildlife Safari",
+      "image": "assets/images/experiences/gentle-giants.jpg",
+      "thumb": "assets/images/experiences/gentle-giants.jpg",
+      "alt": "Elephant herd grazing in open grasslands",
+      "caption": "Elephant herds gathering in the lush wetland margins during your evening safari."
+    },
+    {
+      "id": "gp-gal-09",
+      "title": "Sea Turtle Conservation Sanctuary",
+      "category": "wildlife",
+      "categoryLabel": "Wildlife Safari",
+      "image": "assets/images/gallery/turtle-conservation.jpg",
+      "thumb": "assets/images/gallery/turtle-conservation.jpg",
+      "alt": "Green sea turtle swimming peacefully in a protective rehabilitation pool",
+      "caption": "Community-led preservation protecting endangered sea turtles along the southern coastline."
+    },
+    {
+      "id": "gp-gal-10",
+      "title": "4x4 Safari Jeep Expedition",
+      "category": "wildlife",
+      "categoryLabel": "Wildlife Safari",
+      "image": "assets/images/gallery/yala-safari-jeep.jpg",
+      "thumb": "assets/images/gallery/yala-safari-jeep.jpg",
+      "alt": "Open 4x4 safari jeep exploring wildlife trails",
+      "caption": "Dedicated 4x4 safari expedition with experienced naturalists and wildlife trackers."
+    },
+    {
+      "id": "gp-gal-11",
+      "title": "Highland Tea Terraces in Nuwara Eliya",
+      "category": "highlands",
+      "categoryLabel": "Hill Country",
+      "image": "assets/images/destinations/nuwara-eliya.jpg",
+      "thumb": "assets/images/destinations/nuwara-eliya.jpg",
+      "alt": "Endless rows of manicured green tea bushes clothing highland slopes",
+      "caption": "High-grown Ceylon tea estates where the world's most aromatic tea leaves are nurtured."
+    },
+    {
+      "id": "gp-gal-12",
+      "title": "Artisan Tea Factory Withering Lofts",
+      "category": "highlands",
+      "categoryLabel": "Hill Country",
+      "image": "assets/images/gallery/tea-factory.jpg",
+      "thumb": "assets/images/gallery/tea-factory.jpg",
+      "alt": "Fresh green tea leaves withering on wooden factory racks",
+      "caption": "The traditional orthodox tea crafting process that gives Ceylon tea its world-renowned flavor."
+    },
+    {
+      "id": "gp-gal-13",
+      "title": "Little Adam's Peak Mountain Ridge",
+      "category": "highlands",
+      "categoryLabel": "Hill Country",
+      "image": "assets/images/gallery/little-adams-peak.jpg",
+      "thumb": "assets/images/gallery/little-adams-peak.jpg",
+      "alt": "Winding path along the green ridge crest of Little Adam's Peak",
+      "caption": "Rewarding morning hike yielding 360-degree vistas across southern mountain ravines in Ella."
+    },
+    {
+      "id": "gp-gal-14",
+      "title": "Arthur's Seat Kandy Lake Panorama",
+      "category": "highlands",
+      "categoryLabel": "Hill Country",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/kandy-viewpoint.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/kandy-viewpoint.jpg",
+      "alt": "Panoramic view of Kandy city hills and lake from Arthur's Seat",
+      "caption": "Panoramic highland viewpoint overlooking the sacred city and forested hills of Kandy."
+    },
+    {
+      "id": "gp-gal-15",
+      "title": "Diyaluma Falls Panoramic Cascade",
+      "category": "waterfalls",
+      "categoryLabel": "Waterfalls",
+      "image": "assets/images/experiences/diyaluma-falls.jpg",
+      "thumb": "assets/images/experiences/diyaluma-falls.jpg",
+      "alt": "Wide panoramic view of Diyaluma Falls cascading down sheer rock",
+      "caption": "Sri Lanka's second-highest waterfall plunging 220 metres into the Koslanda gorge."
+    },
+    {
+      "id": "gp-gal-16",
+      "title": "Upper Diyaluma Natural Pools & Trail",
+      "category": "waterfalls",
+      "categoryLabel": "Waterfalls",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/diyaluma-upper-pools.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/diyaluma-upper-pools.jpg",
+      "alt": "Natural rock pools and cascading upper tiers of Diyaluma Falls",
+      "caption": "Upper Diyaluma natural cascading rock pools and surrounding mountain hiking trails."
+    },
+    {
+      "id": "gp-gal-17",
+      "title": "Roaring Cascades of Ravana Falls",
+      "category": "waterfalls",
+      "categoryLabel": "Waterfalls",
+      "image": "assets/images/gallery/ravana-falls.jpg",
+      "thumb": "assets/images/gallery/ravana-falls.jpg",
+      "alt": "Multi-tiered waterfall tumbling down dark rocky cliffs",
+      "caption": "One of Sri Lanka's widest falls, steeped in the ancient legends of the Ramayana in Ella."
+    },
+    {
+      "id": "gp-gal-18",
+      "title": "Ramboda Falls Highland Cascade",
+      "category": "waterfalls",
+      "categoryLabel": "Waterfalls",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/ramboda-falls.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/ramboda-falls.jpg",
+      "alt": "Ramboda Falls plunging 109m down the mountainside",
+      "caption": "Spectacular 109m cascade plunging down misty green cliffs along the road to Nuwara Eliya."
+    },
+    {
+      "id": "gp-gal-19",
+      "title": "Highland Scenic Blue Train",
+      "category": "train",
+      "categoryLabel": "Train Journey",
+      "image": "assets/images/destinations/scenic-train.jpg",
+      "thumb": "assets/images/destinations/scenic-train.jpg",
+      "alt": "Bright blue passenger train winding through terraced emerald tea hills",
+      "caption": "The world-famous rail route climbing through misty cloud forests and cascading waterfalls."
+    },
+    {
+      "id": "gp-gal-20",
+      "title": "Demodara Nine Arch Bridge",
+      "category": "train",
+      "categoryLabel": "Train Journey",
+      "image": "assets/images/destinations/ella.jpg",
+      "thumb": "assets/images/destinations/ella.jpg",
+      "alt": "Historic Demodara Nine Arch Bridge spanning a lush tea valley",
+      "caption": "Colonial stone viaduct hidden deep within the verdant hill-country forests of Ella."
+    },
+    {
+      "id": "gp-gal-21",
+      "title": "Coconut Tree Hill in Mirissa",
+      "category": "beaches",
+      "categoryLabel": "Beaches",
+      "image": "assets/images/destinations/mirissa.jpg",
+      "thumb": "assets/images/destinations/mirissa.jpg",
+      "alt": "Tall curved coconut palms atop a red earth bluff overlooking the sea",
+      "caption": "Iconic coastal promontory overlooking the breaking surf of Mirissa Bay."
+    },
+    {
+      "id": "gp-gal-22",
+      "title": "Traditional Southern Stilt Fishermen",
+      "category": "beaches",
+      "categoryLabel": "Beaches",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/stilt-fishermen.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/stilt-fishermen.jpg",
+      "alt": "Fishermen perched on wooden crossbars practicing stilt fishing",
+      "caption": "Ancient artisanal stilt fishing tradition practiced along the warm southern reefs."
+    },
+    {
+      "id": "gp-gal-23",
+      "title": "Negombo Golden Sandy Beach",
+      "category": "beaches",
+      "categoryLabel": "Beaches",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-beach.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/negombo-beach.jpg",
+      "alt": "Sunset on Negombo beach with golden sands and palm trees",
+      "caption": "Golden-hour sands and refreshing ocean breezes on Negombo's western shoreline."
+    },
+    {
+      "id": "gp-gal-24",
+      "title": "Twilight on Mirissa Beach",
+      "category": "beaches",
+      "categoryLabel": "Beaches",
+      "image": "assets/images/gallery/mirissa-sunset.jpg",
+      "thumb": "assets/images/gallery/mirissa-sunset.jpg",
+      "alt": "Golden evening glow over gentle surf and palm trees",
+      "caption": "The tranquil close of another sun-drenched day along the warm tropical coastline."
+    },
+    {
+      "id": "gp-gal-25",
+      "title": "Sunrise from Pidurangala Rock",
+      "category": "experiences",
+      "categoryLabel": "Local Experiences",
+      "image": "assets/images/gallery/pidurangala-sunrise.jpg",
+      "thumb": "assets/images/gallery/pidurangala-sunrise.jpg",
+      "alt": "Panoramic view of Sigiriya Rock rising from the sea of mist at sunrise",
+      "caption": "Dawn light washing over the central forests from the ancient monastic summit."
+    },
+    {
+      "id": "gp-gal-26",
+      "title": "Traditional Village Oxcart Ride",
+      "category": "experiences",
+      "categoryLabel": "Local Experiences",
+      "image": "assets/images/experiences/village-life.jpg",
+      "thumb": "assets/images/experiences/village-life.jpg",
+      "alt": "Traditional oxcart ride in Habarana village",
+      "caption": "Authentic glimpse into rural Sri Lankan lifestyles and timeless farming practices."
+    },
+    {
+      "id": "gp-gal-27",
+      "title": "Clay-Pot Cooking Demonstration",
+      "category": "experiences",
+      "categoryLabel": "Local Experiences",
+      "image": "assets/images/experiences/sri-lankan-cooking.jpg",
+      "thumb": "assets/images/experiences/sri-lankan-cooking.jpg",
+      "alt": "Cooking demo in traditional clay pots",
+      "caption": "Learning traditional spices, coconut scraping, and open-hearth culinary arts."
+    },
+    {
+      "id": "gp-gal-28",
+      "title": "Kandyan Cultural Performance",
+      "category": "experiences",
+      "categoryLabel": "Local Experiences",
+      "image": "assets/images/gallery/kandyan-dance.jpg",
+      "thumb": "assets/images/gallery/kandyan-dance.jpg",
+      "alt": "Traditional Kandyan dancers in ornate regalia",
+      "caption": "Centuries-old rhythmic drumming and acrobatic ritual dances of the Hill Country."
+    },
+    {
+      "id": "gp-gal-29",
+      "title": "Madu River Mangrove Boat Safari",
+      "category": "experiences",
+      "categoryLabel": "Local Experiences",
+      "image": "assets/images/gallery/madu-ganga-river.jpg",
+      "thumb": "assets/images/gallery/madu-ganga-river.jpg",
+      "alt": "Motorboat beneath mangrove tunnels on Madu Ganga",
+      "caption": "Exploring 64 islands, cinnamon peeling homesteads, and coastal mangrove tunnels."
+    },
+    {
+      "id": "gp-gal-30",
+      "title": "Coastal Seafood Feast",
+      "category": "experiences",
+      "categoryLabel": "Local Experiences",
+      "image": "assets/images/tours/golden-pearl-of-sri-lanka/coastal-seafood.jpg",
+      "thumb": "assets/images/tours/golden-pearl-of-sri-lanka/coastal-seafood.jpg",
+      "alt": "Sri Lankan coastal seafood dish",
+      "caption": "Delectable seafood lunch featuring fresh ocean catch, lagoon crabs, and coastal spices."
+    }
+  ]
+},
+  {
     slug: "classic-sri-lanka",
     title: "Classic Sri Lanka",
     duration: "7 Days / 6 Nights",
