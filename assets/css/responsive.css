@@ -4,6 +4,16 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   00. TABLET & LAPTOP GRID SYSTEM (<= 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    01. TABLET BREAKPOINTS (<= 1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
@@ -153,8 +163,11 @@
     width: min(85vw, 360px);
     height: 100vh;
     height: 100dvh;
-    background-color: #FFFFFF;
-    box-shadow: -10px 0 35px rgba(11, 43, 59, 0.22);
+    background: rgba(11, 43, 59, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.5);
     flex-direction: column;
     align-items: flex-start;
     padding: calc(var(--header-height) + 1.5rem) 2rem 2.5rem;
@@ -171,11 +184,11 @@
   }
 
   .nav-link {
-    color: var(--color-ocean-navy) !important;
+    color: #FFFFFF !important;
     font-size: 1.15rem;
     width: 100%;
     padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(18, 59, 82, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .nav-link::after {
@@ -185,6 +198,7 @@
   .nav-link.active {
     color: var(--color-ceylon-gold) !important;
     font-weight: 600;
+    border-bottom: 2px solid var(--color-ceylon-gold);
   }
 
   .mobile-drawer-cta {
@@ -197,6 +211,9 @@
     padding: 0.85rem 1.5rem;
     font-size: 0.95rem;
     font-weight: 600;
+    background-color: var(--color-ceylon-gold);
+    color: #FFFFFF;
+    border-color: var(--color-ceylon-gold);
   }
 
   /* Nav Backdrop */
@@ -343,6 +360,17 @@ body.mobile-nav-open {
 
   .tours-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tour-card-media {
+    height: 210px;
+    min-height: 210px;
+    max-height: 210px;
+  }
+
+  .tour-card-body {
+    padding: 20px;
   }
 
   .shared-gallery-preview {
@@ -552,8 +580,33 @@ body.mobile-nav-open {
     font-size: 1rem;
   }
 
-  .tour-card-body, .destination-body, .form-card {
+  .destination-body, .form-card {
     padding: 1.25rem;
+  }
+
+  .tour-card-body {
+    padding: 16px 18px 20px;
+  }
+
+  .tour-card-title {
+    font-size: 20px;
+    min-height: 50px;
+  }
+
+  .tour-card-badge {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 9.5px;
+    height: 26px;
+  }
+
+  .tour-card-duration {
+    bottom: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    font-size: 10.5px;
+    height: 26px;
   }
 
   .toast-notification {

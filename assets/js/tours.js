@@ -80,80 +80,158 @@ function renderTourCards(container, toursList) {
 
   toursList.forEach(tour => {
     const card = document.createElement('article');
-    const isPremium = tour.slug === 'golden-pearl-of-sri-lanka' || tour.isGoldPackage;
-    card.className = `tour-card ${isPremium ? 'tour-card-premium tour-card-gold-package' : ''}`;
-    card.setAttribute('data-category', tour.categorySlug);
+    const isGold = tour.slug === 'golden-pearl-of-sri-lanka' || Boolean(tour.isGoldPackage);
+    const isSilver = tour.slug === 'silver-isle-explorer' || Boolean(tour.isSilverPackage);
 
-    const highlightsPreview = tour.highlights.slice(0, 3).map(h => `
-      <div class="tour-highlight-item">${h}</div>
-    `).join('');
+    let packageClass = 'tour-card-standard';
+    if (isGold) packageClass = 'tour-card-premium tour-card-gold-package';
+    else if (isSilver) packageClass = 'tour-card-premium tour-card-silver-package';
 
-    const subtitleHtml = tour.subtitle ? `
-      <div class="tour-card-subtitle">${tour.subtitle}</div>
-    ` : '';
+    card.className = `tour-card ${packageClass}`;
+    card.setAttribute('data-category', tour.categorySlug || 'all');
 
-    const badgesHtml = tour.activityBadges && tour.activityBadges.length ? `
-      <div class="tour-card-badges">
-        ${tour.activityBadges.slice(0, 4).map(b => `<span class="activity-badge-pill">${b}</span>`).join('')}
-        ${tour.activityBadges.length > 4 ? `<span class="activity-badge-pill more">+${tour.activityBadges.length - 4} More</span>` : ''}
-      </div>
-    ` : '';
-
-    const buttonLabel = isPremium ? 'Explore Tour' : 'View Full Itinerary';
+    // Button label
+    let buttonLabel = 'Explore Tour';
+    if (isSilver) buttonLabel = 'View Tour';
     const tourLink = `tour-details.html?tour=${tour.slug}`;
 
-    const isGoldTour = isPremium;
-    const badgeHtml = isGoldTour ? `
-      <span class="badge badge-gold tour-card-badge tour-card-badge-gold" aria-label="Gold Tour Package - Grand Discovery">
-        <svg class="gold-badge-crown-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 16L2 7L7.5 10.5L12 5L16.5 10.5L22 7L20 16H4Z" fill="url(#goldCrownGrad-${tour.slug})" stroke="#8D6516" stroke-width="0.75" stroke-linejoin="round"/>
-          <circle cx="2" cy="7" r="1.3" fill="#FFF9A6" stroke="#8D6516" stroke-width="0.5"/>
-          <circle cx="7.5" cy="10.5" r="1.1" fill="#FFF9A6" stroke="#8D6516" stroke-width="0.5"/>
-          <circle cx="12" cy="5" r="1.6" fill="#FFFFFF" stroke="#8D6516" stroke-width="0.5"/>
-          <circle cx="16.5" cy="10.5" r="1.1" fill="#FFF9A6" stroke="#8D6516" stroke-width="0.5"/>
-          <circle cx="22" cy="7" r="1.3" fill="#FFF9A6" stroke="#8D6516" stroke-width="0.5"/>
-          <path d="M4 18H20C20.55 18 21 18.45 21 19C21 19.55 20.55 20 20 20H4C3.45 20 3 19.55 3 19C3 18.45 3.45 18 4 18Z" fill="url(#goldCrownGrad-${tour.slug})" stroke="#8D6516" stroke-width="0.5"/>
-          <defs>
-            <linearGradient id="goldCrownGrad-${tour.slug}" x1="2" y1="5" x2="22" y2="20" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFF3B0"/>
-              <stop offset="25%" stop-color="#FFD700"/>
-              <stop offset="60%" stop-color="#D4AF37"/>
-              <stop offset="100%" stop-color="#8D6516"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span class="gold-badge-label">Gold Package &bull; ${tour.badge}</span>
-      </span>
-    ` : `
-      <span class="badge badge-gold tour-card-badge">${tour.badge}</span>
-    `;
+    // 1 & 2: Standardized Package Badge
+    let badgeHtml = '';
+    if (isGold) {
+      badgeHtml = `
+        <span class="tour-card-badge tour-badge-gold" aria-label="Gold Package · Grand Discovery">
+          <svg class="tour-badge-icon gold-crown-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 17L2 7L7 10L12 4L17 10L22 7L21 17H3Z" fill="url(#goldCrownFill-${tour.slug})" stroke="#8D6516" stroke-width="0.75" stroke-linejoin="round"/>
+            <circle cx="2" cy="7" r="1.1" fill="#FEF08A"/>
+            <circle cx="7" cy="10" r="1.1" fill="#FEF08A"/>
+            <circle cx="12" cy="4" r="1.3" fill="#FFFFFF"/>
+            <circle cx="17" cy="10" r="1.1" fill="#FEF08A"/>
+            <circle cx="22" cy="7" r="1.1" fill="#FEF08A"/>
+            <rect x="3" y="17.5" width="18" height="2" rx="0.5" fill="url(#goldCrownFill-${tour.slug})" stroke="#8D6516" stroke-width="0.5"/>
+            <defs>
+              <linearGradient id="goldCrownFill-${tour.slug}" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFF3B0"/>
+                <stop offset="35%" stop-color="#FFD700"/>
+                <stop offset="70%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#8D6516"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="tour-badge-text">GOLD PACKAGE · GRAND DISCOVERY</span>
+        </span>
+      `;
+    } else if (isSilver) {
+      badgeHtml = `
+        <span class="tour-card-badge tour-badge-silver" aria-label="Silver Package · Isle Explorer">
+          <svg class="tour-badge-icon silver-coin-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="url(#silverCoinStroke-${tour.slug})" stroke-width="1.5" fill="url(#silverCoinFill-${tour.slug})"/>
+            <circle cx="12" cy="12" r="7.2" stroke="#94A3B8" stroke-width="0.75" stroke-dasharray="1.5 1.5" fill="none"/>
+            <path d="M12 5.5L13.7 9.2L17.5 9.8L14.7 12.5L15.4 16.3L12 14.5L8.6 16.3L9.3 12.5L6.5 9.8L10.3 9.2L12 5.5Z" fill="url(#silverStarFill-${tour.slug})"/>
+            <defs>
+              <linearGradient id="silverCoinStroke-${tour.slug}" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="50%" stop-color="#CBD5E1"/>
+                <stop offset="100%" stop-color="#94A3B8"/>
+              </linearGradient>
+              <linearGradient id="silverCoinFill-${tour.slug}" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#334155"/>
+                <stop offset="100%" stop-color="#0F172A"/>
+              </linearGradient>
+              <linearGradient id="silverStarFill-${tour.slug}" x1="6" y1="5" x2="18" y2="17" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="60%" stop-color="#E2E8F0"/>
+                <stop offset="100%" stop-color="#94A3B8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="tour-badge-text">SILVER PACKAGE · ISLE EXPLORER</span>
+        </span>
+      `;
+    } else {
+      const badgeName = (tour.badge || 'SIGNATURE').toUpperCase();
+      badgeHtml = `
+        <span class="tour-card-badge tour-badge-standard" aria-label="Curated · ${tour.badge || 'Signature'}">
+          <svg class="tour-badge-icon standard-compass-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="#8EC4DE" stroke="none"></polygon>
+          </svg>
+          <span class="tour-badge-text">CURATED · ${badgeName}</span>
+        </span>
+      `;
+    }
 
+    // 6. Subtitle
+    const subtitleText = tour.subtitle || `${tour.duration} Curated Private Tour`;
+
+    // 8. Experience Highlights (properly separated with · )
+    let highlightsList = [];
+    if (tour.activityBadges && tour.activityBadges.length) {
+      highlightsList = tour.activityBadges;
+    } else if (tour.highlights && tour.highlights.length) {
+      highlightsList = tour.highlights.slice(0, 4);
+    }
+    const visibleHighlights = highlightsList.slice(0, 4);
+    let highlightsText = visibleHighlights.join(' · ');
+    if (highlightsList.length > 4) {
+      highlightsText += ` · +${highlightsList.length - 4} More`;
+    }
+
+    // 10. Existing inclusions / package features (3 bullets)
+    const featuresHtml = (tour.highlights || []).slice(0, 3).map(feat => `
+      <div class="tour-card-feature-item" title="${escapeHtml(feat)}">
+        <svg class="feature-bullet-icon" viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="4 10 8 14 16 6"></polyline>
+        </svg>
+        <span class="feature-bullet-text">${feat}</span>
+      </div>
+    `).join('');
+
+    // Mandatory 11-step structure in exact specified order:
+    // 1. Tour destination image
+    // 2. Package category badge (top-left 14px)
+    // 3. Tour duration badge (bottom-right 14px)
+    // 4. Experience category labels
+    // 5. Main tour package title
+    // 6. Tour subtitle
+    // 7. Destination itinerary with location icon
+    // 8. Tour experience highlights
+    // 9. Short tour description
+    // 10. Existing inclusions or package features
+    // 11. Existing call-to-action buttons
     card.innerHTML = `
       <div class="tour-card-media">
-        <img src="${tour.heroImage}" alt="${tour.title} in Sri Lanka" loading="lazy" width="600" height="375" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
+        <img src="${tour.heroImage}" alt="${tour.title} in Sri Lanka" loading="lazy" width="600" height="230" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
         ${badgeHtml}
-        <span class="tour-card-duration">${tour.duration}</span>
+        <span class="tour-card-duration" aria-label="Duration: ${tour.duration}">
+          <svg class="tour-duration-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>${tour.duration}</span>
+        </span>
       </div>
       <div class="tour-card-body">
-        <span class="tour-card-category">${tour.category}</span>
+        <div class="tour-card-category">${tour.category}</div>
         <h3 class="tour-card-title">${tour.title}</h3>
-        ${subtitleHtml}
+        <div class="tour-card-subtitle">${subtitleText}</div>
         <div class="tour-card-route">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="tour-route-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <span>${tour.destinationsSummary}</span>
+          <span class="tour-route-text">${tour.destinationsSummary}</span>
         </div>
-        ${badgesHtml}
+        <div class="tour-card-experience-highlights">
+          <span class="experience-highlights-text">${highlightsText}</span>
+        </div>
         <p class="tour-card-desc">${tour.shortDescription}</p>
-        <div class="tour-card-highlights">
-          ${highlightsPreview}
+        <div class="tour-card-features">
+          ${featuresHtml}
         </div>
         <div class="tour-card-footer">
           <a href="${tourLink}" class="btn btn-navy btn-sm btn-icon-arrow tour-explore-btn">
             <span>${buttonLabel}</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
@@ -207,14 +285,72 @@ function initTourDetailPage() {
     tour = TOURS_DATA[0];
   }
 
-  const isGoldenPearl = tour.slug === 'golden-pearl-of-sri-lanka';
+  const isGoldenPearl = tour.slug === 'golden-pearl-of-sri-lanka' || tour.isGoldPackage;
+  const isSilverExplorer = tour.slug === 'silver-isle-explorer' || tour.isSilverPackage;
 
   // Update page title & meta tags
-  document.title = `${tour.title} — ${tour.duration} | SL Mango Exotic Tours`;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) {
-    metaDesc.setAttribute('content', `${tour.title}: ${tour.shortDescription}`);
+  if (isSilverExplorer) {
+    document.title = `${tour.title} — 10-Day Sri Lanka Discovery Journey | SL Mango Exotic Tours`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', `10 Day Sri Lanka Tour Package: Explore Sri Lanka through ancient heritage, elephant encounters, mountain adventures, tea country, river safaris and tropical beaches. Private guided tour by SL Mango Exotic Tours.`);
+    }
+  } else {
+    document.title = `${tour.title} — ${tour.duration} | SL Mango Exotic Tours`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', `${tour.title}: ${tour.shortDescription}`);
+    }
   }
+
+  // Update Open Graph Metadata
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', `${tour.title} — ${tour.subtitle || tour.duration}`);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute('content', tour.shortDescription);
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage) ogImage.setAttribute('content', tour.heroImage);
+
+  // Inject or Update Schema.org TouristTrip JSON-LD
+  let schemaScript = document.getElementById('tour-schema-jsonld');
+  if (!schemaScript) {
+    schemaScript = document.createElement('script');
+    schemaScript.id = 'tour-schema-jsonld';
+    schemaScript.type = 'application/ld+json';
+    document.head.appendChild(schemaScript);
+  }
+  const tripSchema = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": tour.title,
+    "description": tour.shortDescription,
+    "touristType": tour.suitableFor,
+    "itinerary": {
+      "@type": "ItemList",
+      "numberOfItems": tour.days.length,
+      "itemListElement": tour.days.map((d, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "item": {
+          "@type": "TouristAttraction",
+          "name": `Day ${d.day}: ${d.title}`,
+          "description": d.introduction
+        }
+      }))
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": window.location.href
+    },
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "SL Mango Exotic Tours",
+      "url": "https://slmangoexotictours.com/"
+    }
+  };
+  schemaScript.textContent = JSON.stringify(tripSchema, null, 2);
 
   // 1. Hydrate Cinematic Hero
   const heroTitle = document.getElementById('detail-hero-title');
@@ -229,7 +365,13 @@ function initTourDetailPage() {
     heroTitle.innerHTML = `<span class="mask-line" aria-hidden="true"><span class="mask-line-inner">${tour.title}</span></span>`;
   }
   if (heroBadge) {
-    if (isGoldenPearl || tour.isGoldPackage) {
+    if (isSilverExplorer) {
+      heroBadge.className = 'badge badge-silver tour-card-badge-silver';
+      heroBadge.innerHTML = `
+        <img src="assets/images/silver-coin-emblem.svg" alt="Silver Isle Explorer Silver Coin Emblem" class="silver-coin-badge-icon">
+        <span>Silver Collection &bull; ${tour.subtitle || '10-Day Sri Lanka Discovery Journey'}</span>
+      `;
+    } else if (isGoldenPearl || tour.isGoldPackage) {
       heroBadge.className = 'badge badge-gold tour-card-badge-gold';
       heroBadge.innerHTML = `
         <svg class="gold-badge-crown-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -277,8 +419,23 @@ function initTourDetailPage() {
       `;
     }
 
+    let coinMedallionMarkup = '';
+    if (isSilverExplorer) {
+      coinMedallionMarkup = `
+        <div class="silver-hero-coin-container" style="margin-bottom: 1rem;">
+          <img src="assets/images/silver-coin-emblem.svg" alt="Silver Isle Explorer Coin Emblem" class="silver-hero-coin-img">
+          <div class="silver-hero-coin-text">
+            <span class="silver-hero-coin-collection">Silver Collection</span>
+            <span class="silver-hero-coin-title">Silver Isle Explorer &bull; 10-Day Discovery Journey</span>
+          </div>
+        </div>
+      `;
+    }
+
+    const subtitleColor = isSilverExplorer ? '#E2E8F0' : 'var(--color-ceylon-gold)';
     subtitleBlock.innerHTML = `
-      ${tour.subtitle ? `<div style="font-family: var(--font-heading); font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 500; color: var(--color-ceylon-gold); margin-top: -0.25rem; margin-bottom: 0.75rem; letter-spacing: 0.03em;">${tour.subtitle}</div>` : ''}
+      ${coinMedallionMarkup}
+      ${tour.subtitle ? `<div style="font-family: var(--font-heading); font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 500; color: ${subtitleColor}; margin-top: -0.25rem; margin-bottom: 0.75rem; letter-spacing: 0.03em;">${tour.subtitle}</div>` : ''}
       ${badgesMarkup}
     `;
 
@@ -372,6 +529,95 @@ function initTourDetailPage() {
       `;
     }
 
+    // Guide Selection Section
+    let guideSectionHtml = '';
+    if (tour.guideOptions) {
+      const go = tour.guideOptions;
+      guideSectionHtml = `
+        <div class="guide-selection-section" id="guide-selection">
+          <div class="section-header text-left" style="margin-bottom: 0.75rem;">
+            <span class="section-tag" style="background: rgba(140, 153, 168, 0.18); color: #4A5568;">Dedicated Expert Guidance</span>
+            <h3 class="h3" style="color: var(--color-ocean-navy);">${go.title}</h3>
+            <span class="accent-line" style="background: #8C99A8;"></span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--color-text-main); margin-bottom: 1rem; line-height: 1.6;">
+            To ensure your Sri Lankan journey matches your personal travel preferences, SL Mango Exotic Tours offers two distinct guide services. Please indicate your preferred option in your booking enquiry:
+          </p>
+          <div class="guide-options-grid">
+            <div class="guide-option-card">
+              <div class="guide-option-header">
+                <div class="guide-option-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a9 9 0 0 1 9 9c0 7-9 11-9 11S3 18 3 11a9 9 0 0 1 9-9z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="guide-option-badge">${go.optionA.badge}</span>
+                  <h4 class="guide-option-title">${go.optionA.name}</h4>
+                </div>
+              </div>
+              <ul class="guide-option-list">
+                ${go.optionA.features.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div class="guide-option-card">
+              <div class="guide-option-header">
+                <div class="guide-option-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <div>
+                  <span class="guide-option-badge">${go.optionB.badge}</span>
+                  <h4 class="guide-option-title">${go.optionB.name}</h4>
+                </div>
+              </div>
+              <ul class="guide-option-list">
+                ${go.optionB.features.map(f => `<li>${f}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+          <div class="guide-option-notice">
+            <strong>Important Notice:</strong> ${go.notice}
+          </div>
+        </div>
+      `;
+    }
+
+    // Accommodation Section
+    let accommodationSectionHtml = '';
+    if (tour.accommodationInfo) {
+      const acc = tour.accommodationInfo;
+      accommodationSectionHtml = `
+        <div class="accommodation-section-box" id="accommodation-section">
+          <div class="section-header text-left" style="margin-bottom: 0.75rem;">
+            <span class="section-tag" style="background: rgba(140, 153, 168, 0.18); color: #4A5568;">Curated Hospitality</span>
+            <h3 class="h3" style="color: var(--color-ocean-navy);">${acc.title}</h3>
+            <span class="accent-line" style="background: #8C99A8;"></span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--color-text-main); margin-bottom: 1.25rem; line-height: 1.6;">
+            ${acc.description}
+          </p>
+          <div class="accommodation-tier-grid">
+            ${acc.tiers.map((t, idx) => `
+              <div class="accommodation-tier-card ${idx === 0 ? 'included' : ''}">
+                <span class="accommodation-tier-tag ${idx === 0 ? 'included-tag' : 'upgrade-tag'}">${t.tag}</span>
+                <h4 class="accommodation-tier-title">${t.name}</h4>
+                <p class="accommodation-tier-desc">${t.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+          <div class="pricing-guidance-box">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <div class="pricing-guidance-content">
+              <strong>Transparent Booking Policy:</strong> Hotel names, exact room categories, and any upgrade adjustments will be confirmed in your final written quotation. Custom accommodation upgrades may involve additional charges.
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     overviewMount.innerHTML = `
       <div class="tour-narrative-overview">
         <span class="section-tag">Tour Overview</span>
@@ -388,6 +634,8 @@ function initTourDetailPage() {
         </div>
 
         ${specialFeaturesHtml}
+        ${guideSectionHtml}
+        ${accommodationSectionHtml}
       </div>
     `;
   }
@@ -727,21 +975,36 @@ function initTourDetailPage() {
   // 8. Hydrate Sticky Sidebar
   const sidebarMount = document.getElementById('detail-sidebar-mount');
   if (sidebarMount) {
+    let sidebarBadge = `<span class="badge badge-gold">${tour.badge || 'Tailored Private Tour'}</span>`;
+    let sidebarEmblem = `<img src="assets/images/logo.png" alt="SL Mango Exotic Tours Emblem" style="width:48px; height:auto; filter:drop-shadow(0 2px 6px rgba(200,164,106,0.35));">`;
+    let guideRowText = 'National Tourist Guide throughout';
+
+    if (isSilverExplorer) {
+      sidebarBadge = `
+        <span class="badge badge-silver tour-card-badge-silver" style="font-size:0.75rem; padding:0.35rem 0.75rem;">
+          <img src="assets/images/silver-coin-emblem.svg" alt="Silver Coin" class="silver-coin-badge-icon" style="width:18px;height:18px;">
+          <span>${tour.badge || 'Silver Collection'}</span>
+        </span>
+      `;
+      sidebarEmblem = `<img src="assets/images/silver-coin-emblem.svg" alt="Silver Isle Explorer Medallion" style="width:52px; height:52px; filter:drop-shadow(0 2px 8px rgba(180,195,215,0.5));">`;
+      guideRowText = 'Choice of National Guide or Chauffeur Guide';
+    }
+
     sidebarMount.innerHTML = `
       <div class="enquiry-card-sticky">
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
-          <span class="badge badge-gold">${tour.badge || 'Tailored Private Tour'}</span>
-          <img src="assets/images/logo.png" alt="SL Mango Exotic Tours Emblem" style="width:48px; height:auto; filter:drop-shadow(0 2px 6px rgba(200,164,106,0.35));">
+          ${sidebarBadge}
+          ${sidebarEmblem}
         </div>
         <h3 class="enquiry-card-title">${tour.title}</h3>
-        <p class="enquiry-card-subtitle">${tour.duration} • Private Executive Journey</p>
+        <p class="enquiry-card-subtitle">${tour.duration} • ${tour.subtitle || 'Private Executive Journey'}</p>
 
         <div class="sidebar-features-list">
           <div class="sidebar-feature-row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
-            <span>National Tourist Guide throughout</span>
+            <span>${guideRowText}</span>
           </div>
           <div class="sidebar-feature-row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -955,15 +1218,18 @@ function renderTourEnquirySection(tour) {
 
   if (!enquirySection) return;
 
+  const isSilver = tour.slug === 'silver-isle-explorer' || tour.isSilverPackage;
+  const tourSubtitle = tour.subtitle || `${tour.duration} Handcrafted Itinerary`;
+
   enquirySection.innerHTML = `
     <div class="container">
       <div class="tour-enquiry-card">
         <div class="tour-enquiry-header">
-          <span class="section-tag">Start Planning Your Ceylon Journey</span>
-          <h2 class="tour-enquiry-title">Let Your Sri Lankan Story Begin</h2>
-          <div class="tour-enquiry-subtitle">Fourteen days. Countless experiences. One unforgettable journey.</div>
+          <span class="section-tag">${isSilver ? 'Silver Collection Booking &amp; Tailoring' : 'Start Planning Your Ceylon Journey'}</span>
+          <h2 class="tour-enquiry-title">Enquire About ${tour.title}</h2>
+          <div class="tour-enquiry-subtitle">${tour.duration}. Countless authentic experiences. One seamless private journey.</div>
           <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 0.5rem; margin-bottom: 0;">
-            Share your preferred dates and travel rhythm. Our tour director will personally review your request, customise the itinerary to your wishes, and return a transparent quotation within a few hours.
+            Share your preferred dates, party size, and travel style. Our tour director reviews all enquiries directly and returns a comprehensive, transparent quotation with confirmed hotel categories within a few hours.
           </p>
         </div>
 
@@ -982,44 +1248,73 @@ function renderTourEnquirySection(tour) {
             </div>
 
             <div class="form-group">
-              <label for="enq-phone" class="form-label">WhatsApp / Phone Number</label>
+              <label for="enq-phone" class="form-label">WhatsApp Number <span style="font-size:0.8rem; color:var(--color-text-muted); font-weight:normal;">(Recommended)</span></label>
               <input type="tel" id="enq-phone" name="phone" class="form-control" placeholder="e.g. +44 7911 123456">
             </div>
 
             <div class="form-group">
-              <label for="enq-dates" class="form-label">Preferred Travel Dates</label>
-              <input type="text" id="enq-dates" name="dates" class="form-control" placeholder="e.g. November 2026 / 14 Days">
+              <label for="enq-country" class="form-label">Country of Residence</label>
+              <input type="text" id="enq-country" name="country" class="form-control" placeholder="e.g. United Kingdom, Germany, Australia, USA">
             </div>
 
             <div class="form-group">
-              <label for="enq-travellers" class="form-label">Number of Travellers</label>
-              <select id="enq-travellers" name="travellers" class="form-control">
-                <option value="2 Adults (Couple)" selected>2 Adults (Couple / Honeymoon)</option>
-                <option value="1 Adult (Solo Traveller)">1 Adult (Solo Traveller)</option>
-                <option value="3-4 Persons (Family / Friends)">3–4 Persons (Family / Friends)</option>
-                <option value="5-8 Persons (Small Group)">5–8 Persons (Small Group)</option>
-                <option value="8+ Persons (Private Group Tour)">8+ Persons (Private Group Tour)</option>
-              </select>
+              <label for="enq-dates" class="form-label">Preferred Travel Date</label>
+              <input type="text" id="enq-dates" name="dates" class="form-control" placeholder="e.g. November 2026 or Flexible">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Party Size</label>
+              <div class="form-row-2col">
+                <div>
+                  <label for="enq-adults" style="font-size:0.8rem; color:var(--color-text-muted); display:block; margin-bottom:0.25rem;">Adults</label>
+                  <select id="enq-adults" name="adults" class="form-control">
+                    <option value="1 Adult">1 Adult</option>
+                    <option value="2 Adults" selected>2 Adults</option>
+                    <option value="3 Adults">3 Adults</option>
+                    <option value="4 Adults">4 Adults</option>
+                    <option value="5 Adults">5 Adults</option>
+                    <option value="6+ Adults (Group)">6+ Adults</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="enq-children" style="font-size:0.8rem; color:var(--color-text-muted); display:block; margin-bottom:0.25rem;">Children (&lt;12 yrs)</label>
+                  <select id="enq-children" name="children" class="form-control">
+                    <option value="0 Children" selected>0 Children</option>
+                    <option value="1 Child">1 Child</option>
+                    <option value="2 Children">2 Children</option>
+                    <option value="3+ Children">3+ Children</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
               <label for="enq-accommodation" class="form-label">Preferred Accommodation Category</label>
               <select id="enq-accommodation" name="accommodation" class="form-control">
-                <option value="3-Star Standard & Above (Included in Package)" selected>3-Star Standard &amp; Above (Included in Package)</option>
+                <option value="3-Star Standard (Included in Package)" selected>3-Star Standard (Included in Package)</option>
                 <option value="4-Star Premium Comfort (Upgrade Request)">4-Star Premium Comfort (Upgrade Request)</option>
-                <option value="5-Star Luxury / Boutique Resorts (Upgrade Request)">5-Star Luxury / Boutique Resorts (Upgrade Request)</option>
+                <option value="5-Star Luxury &amp; Boutique (Upgrade Request)">5-Star Luxury &amp; Boutique (Upgrade Request)</option>
+                <option value="Luxury Private Villas &amp; Exclusive Hideaways">Luxury Private Villas &amp; Exclusive Hideaways</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="enq-guide" class="form-label">Preferred Guide Experience</label>
+              <select id="enq-guide" name="guide" class="form-control">
+                <option value="Option A – National Tourist Guide (In-depth culture &amp; heritage)" selected>Option A – National Tourist Guide (In-depth culture &amp; heritage)</option>
+                <option value="Option B – Chauffeur Guide (Flexible, traveler-led guidance)">Option B – Chauffeur Guide (Flexible, traveler-led guidance)</option>
               </select>
             </div>
 
             <div class="form-group tour-enquiry-full">
-              <label for="enq-requests" class="form-label">Additional Requests or Tailoring Preferences</label>
-              <textarea id="enq-requests" name="requests" class="form-control" rows="4" placeholder="Tell us about your interests: e.g. special dietary needs, community school visit participation, room preferences, extra beach relaxation, or photography focus..."></textarea>
+              <label for="enq-requests" class="form-label">Additional Requirements or Tailoring Preferences</label>
+              <textarea id="enq-requests" name="requests" class="form-control" rows="4" placeholder="Share any specific wishes: e.g. hot-air balloon ride booking, dietary preferences, extra beach leisure, room types, or community school visit participation..."></textarea>
             </div>
           </div>
 
           <div class="enquiry-action-row">
             <button type="submit" class="btn btn-primary btn-lg btn-icon-arrow" id="btn-submit-enquiry">
-              <span>Request Your Tour</span>
+              <span>Submit Tour Enquiry</span>
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -1037,7 +1332,7 @@ function renderTourEnquirySection(tour) {
 
           <div class="tour-enquiry-guarantee">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Direct Sri Lankan tour operator • 100% bespoke tailoring • No hidden reservation charges</span>
+            <span>Direct Sri Lankan tour operator • Fully customizable itineraries • Transparent quotes • No hidden reservation charges</span>
           </div>
         </form>
       </div>
@@ -1054,9 +1349,12 @@ function renderTourEnquirySection(tour) {
       const nameInput = document.getElementById('enq-name');
       const emailInput = document.getElementById('enq-email');
       const phoneInput = document.getElementById('enq-phone');
+      const countryInput = document.getElementById('enq-country');
       const datesInput = document.getElementById('enq-dates');
-      const travellersSelect = document.getElementById('enq-travellers');
+      const adultsSelect = document.getElementById('enq-adults');
+      const childrenSelect = document.getElementById('enq-children');
       const accomSelect = document.getElementById('enq-accommodation');
+      const guideSelect = document.getElementById('enq-guide');
       const requestsInput = document.getElementById('enq-requests');
 
       // Validation
@@ -1080,10 +1378,13 @@ function renderTourEnquirySection(tour) {
       const payload = {
         name: nameInput.value.trim(),
         email: emailInput.value.trim(),
-        phone: phoneInput ? phoneInput.value.trim() : 'Not provided',
+        phone: phoneInput && phoneInput.value.trim() ? phoneInput.value.trim() : 'Not provided',
+        country: countryInput && countryInput.value.trim() ? countryInput.value.trim() : 'Not specified',
         dates: datesInput && datesInput.value.trim() ? datesInput.value.trim() : 'Flexible',
-        travellers: travellersSelect ? travellersSelect.value : '2 Adults',
+        adults: adultsSelect ? adultsSelect.value : '2 Adults',
+        children: childrenSelect ? childrenSelect.value : '0 Children',
         accommodation: accomSelect ? accomSelect.value : '3-Star Standard',
+        guide: guideSelect ? guideSelect.value : 'Option A – National Tourist Guide',
         requests: requestsInput && requestsInput.value.trim() ? requestsInput.value.trim() : 'None specified',
         interest: tour.title
       };
@@ -1092,12 +1393,15 @@ function renderTourEnquirySection(tour) {
 `*NEW TOUR ENQUIRY — SL MANGO EXOTIC TOURS*
 ----------------------------------------
 *Tour Package:* ${tour.title} (${tour.duration})
+*Collection:* ${tour.collection || (tour.isSilverPackage ? 'Silver Collection' : (tour.isGoldPackage ? 'Gold Collection' : 'Curated Private Journey'))}
 *Client Name:* ${payload.name}
 *Email:* ${payload.email}
-*Phone / WhatsApp:* ${payload.phone}
-*Proposed Dates:* ${payload.dates}
-*Number of Travellers:* ${payload.travellers}
-*Accommodation Category:* ${payload.accommodation}
+*WhatsApp Number:* ${payload.phone}
+*Country of Residence:* ${payload.country}
+*Preferred Travel Date:* ${payload.dates}
+*Party Size:* ${payload.adults}, ${payload.children}
+*Preferred Guide Experience:* ${payload.guide}
+*Preferred Accommodation:* ${payload.accommodation}
 
 *Special Requests & Notes:*
 ${payload.requests}

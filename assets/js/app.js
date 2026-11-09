@@ -32,6 +32,60 @@ function initHeader() {
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Trigger initial state
+
+  // Automatically synchronize active navigation indicator across pages
+  updateActiveNavLink();
+}
+
+/**
+ * Master Navbar: Automatically synchronizes active page underline indicator
+ */
+function updateActiveNavLink() {
+  const path = window.location.pathname.toLowerCase();
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+  if (!navLinks.length) return;
+
+  let currentPage = 'home';
+  if (path.includes('tours.html') || path.includes('tour-details.html')) {
+    currentPage = 'tours';
+  } else if (path.includes('services.html')) {
+    currentPage = 'services';
+  } else if (path.includes('gallery.html')) {
+    currentPage = 'gallery';
+  } else if (path.includes('about.html')) {
+    currentPage = 'about';
+  } else if (path.includes('contact.html')) {
+    currentPage = 'contact';
+  } else if (path.endsWith('/') || path.endsWith('index.html') || path === '') {
+    currentPage = 'home';
+  }
+
+  navLinks.forEach(link => {
+    const href = (link.getAttribute('href') || '').toLowerCase();
+    let isMatch = false;
+
+    if (currentPage === 'home' && (href === 'index.html' || href === './' || href === '/')) {
+      isMatch = true;
+    } else if (currentPage === 'tours' && href.includes('tours.html')) {
+      isMatch = true;
+    } else if (currentPage === 'services' && href.includes('services.html')) {
+      isMatch = true;
+    } else if (currentPage === 'gallery' && href.includes('gallery.html')) {
+      isMatch = true;
+    } else if (currentPage === 'about' && href.includes('about.html')) {
+      isMatch = true;
+    } else if (currentPage === 'contact' && href.includes('contact.html')) {
+      isMatch = true;
+    }
+
+    if (isMatch) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+    }
+  });
 }
 
 /**
