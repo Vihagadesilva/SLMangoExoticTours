@@ -645,26 +645,45 @@ function initTourDetailPage() {
   if (itineraryMount) {
     itineraryMount.innerHTML = '';
 
+    // Helper function to determine if photo caption adds valuable distinct context not already in paragraph
+    function shouldDisplayPhotoCaption(caption, description) {
+      if (!caption || !caption.trim()) return false;
+      if (!description || !description.trim()) return true;
+      const cleanCap = caption.trim().toLowerCase().replace(/[^\w\s]/g, '');
+      const cleanDesc = description.trim().toLowerCase().replace(/[^\w\s]/g, '');
+      return cleanDesc !== cleanCap && !cleanDesc.includes(cleanCap);
+    }
+
     // Render Itinerary Header Controls (Expand All / Collapse All)
-    const controlsBar = document.createElement('div');
-    controlsBar.className = 'itinerary-header-bar';
+    let controlsBar = document.getElementById('itinerary-controls-bar');
+    if (!controlsBar) {
+      controlsBar = document.createElement('div');
+      controlsBar.id = 'itinerary-controls-bar';
+      controlsBar.className = 'itinerary-header-bar';
+      itineraryMount.parentElement.insertBefore(controlsBar, itineraryMount);
+    }
     controlsBar.innerHTML = `
-      <div>
-        <span style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: var(--color-ceylon-gold); text-transform: uppercase; letter-spacing: 0.05em;">Interactive Itinerary</span>
-        <div style="font-size: 0.95rem; color: var(--color-text-muted);">Explore all ${tour.days.length} days with verified destination photography & timings.</div>
+      <div class="itinerary-header-info">
+        <span class="itinerary-header-tag">Interactive Itinerary</span>
+        <div class="itinerary-header-sub">Explore all ${tour.days.length} days with verified destination photography &amp; timings.</div>
       </div>
       <div class="itinerary-controls">
-        <button type="button" class="itinerary-control-btn active" id="btn-expand-all">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+        <button type="button" class="btn-itinerary-expand active" id="btn-expand-all" aria-label="Expand all days">
+          <svg class="itinerary-ctrl-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#D6AD68" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
           <span>Expand All Days</span>
         </button>
-        <button type="button" class="itinerary-control-btn" id="btn-collapse-all">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg>
+        <button type="button" class="btn-itinerary-collapse" id="btn-collapse-all" aria-label="Collapse all days">
+          <svg class="itinerary-ctrl-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#173B4D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 11 12 6 7 11"></polyline>
+            <polyline points="17 18 12 13 7 18"></polyline>
+          </svg>
           <span>Collapse All Days</span>
         </button>
       </div>
     `;
-    itineraryMount.appendChild(controlsBar);
 
     tour.days.forEach(day => {
       const dayEl = document.createElement('div');
@@ -673,16 +692,21 @@ function initTourDetailPage() {
 
       const formattedDayNum = String(day.day).padStart(2, '0');
 
-      // Activities HTML with dedicated photos
+      // Activities HTML with dedicated photos and clean captions below
       const activitiesHtml = day.activities.map(act => {
         const actPhotosHtml = act.photos && act.photos.length ? `
           <div class="activity-photos-grid">
-            ${act.photos.map(p => `
-              <div class="activity-photo-item" onclick="openLightbox('${p.src}', '${escapeHtml(p.caption)}', '${escapeHtml(p.alt)}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(p.caption)}">
-                <img src="${p.src}" alt="${p.alt}" loading="lazy" width="400" height="250" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
-                <div class="activity-photo-caption">${p.caption}</div>
-              </div>
-            `).join('')}
+            ${act.photos.map(p => {
+              const showCaption = shouldDisplayPhotoCaption(p.caption, act.description);
+              return `
+                <div class="activity-photo-wrapper">
+                  <div class="activity-photo-item" onclick="openLightbox('${p.src}', '${escapeHtml(p.caption)}', '${escapeHtml(p.alt)}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(p.caption)}">
+                    <img src="${p.src}" alt="${p.alt}" loading="lazy" width="400" height="250" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
+                  </div>
+                  ${showCaption ? `<div class="photo-caption-below">${escapeText(p.caption)}</div>` : ''}
+                </div>
+              `;
+            }).join('')}
           </div>
         ` : '';
 
@@ -698,12 +722,15 @@ function initTourDetailPage() {
         `;
       }).join('');
 
-      // Dedicated Day Visual Highlights (Day Gallery)
+      // Dedicated Day Visual Highlights (Day Gallery) with clean captions below
       let dayGalleryHtml = '';
       if (day.dayGallery && day.dayGallery.length) {
         const galleryItems = day.dayGallery.map((img, idx) => `
-          <div class="day-gallery-item ${idx === 0 ? 'featured' : 'secondary'}" onclick="openLightbox('${img.src}', '${escapeHtml(img.caption)}', '${escapeHtml(img.alt)}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(img.caption)}">
-            <img src="${img.src}" alt="${img.alt}" loading="lazy" width="600" height="375" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
+          <div class="day-gallery-card ${idx === 0 ? 'featured' : 'secondary'}">
+            <div class="day-gallery-item" onclick="openLightbox('${img.src}', '${escapeHtml(img.caption)}', '${escapeHtml(img.alt)}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(img.caption)}">
+              <img src="${img.src}" alt="${img.alt}" loading="lazy" width="600" height="375" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
+            </div>
+            ${img.caption ? `<div class="photo-caption-below">${escapeText(img.caption)}</div>` : ''}
           </div>
         `).join('');
 
@@ -756,7 +783,7 @@ function initTourDetailPage() {
         <div class="day-content-card">
           <div class="day-header" role="button" tabindex="0" aria-expanded="true" aria-controls="day-body-${day.day}">
             <div class="day-header-top">
-              <div>
+              <div class="day-header-info">
                 <div class="day-meta-tags">
                   <span class="badge badge-gold">DAY ${formattedDayNum}</span>
                   <span class="badge badge-navy">${day.destination}</span>
@@ -765,15 +792,11 @@ function initTourDetailPage() {
                 <h3 class="day-title">${day.title}</h3>
                 ${day.subtitle ? `<div class="day-subtitle">${day.subtitle}</div>` : ''}
               </div>
-              <button class="day-toggle-btn" aria-label="Toggle details for Day ${formattedDayNum}">
-                <span class="toggle-text">Collapse</span>
-                <svg class="day-toggle-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <button class="day-toggle-btn" type="button" aria-label="Collapse Day ${formattedDayNum} details">
+                <svg class="day-toggle-chevron" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#D6AD68" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </button>
-            </div>
-            <div class="day-preview-strip">
-              ${previewThumbnails}
             </div>
           </div>
 
@@ -826,6 +849,7 @@ function initTourDetailPage() {
 
       headerEl.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.closest('button')) return;
           e.preventDefault();
           toggleDayCard(dayEl);
         }
@@ -844,8 +868,12 @@ function initTourDetailPage() {
           card.classList.remove('is-collapsed');
           const header = card.querySelector('.day-header');
           if (header) header.setAttribute('aria-expanded', 'true');
-          const toggleText = card.querySelector('.toggle-text');
-          if (toggleText) toggleText.textContent = 'Collapse';
+          const toggleBtn = card.querySelector('.day-toggle-btn');
+          const dayNum = card.id ? card.id.replace('day-', '') : '';
+          if (toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.setAttribute('aria-label', `Collapse Day ${dayNum} details`);
+          }
         });
         btnExpandAll.classList.add('active');
         btnCollapseAll.classList.remove('active');
@@ -856,8 +884,12 @@ function initTourDetailPage() {
           card.classList.add('is-collapsed');
           const header = card.querySelector('.day-header');
           if (header) header.setAttribute('aria-expanded', 'false');
-          const toggleText = card.querySelector('.toggle-text');
-          if (toggleText) toggleText.textContent = 'Expand';
+          const toggleBtn = card.querySelector('.day-toggle-btn');
+          const dayNum = card.id ? card.id.replace('day-', '') : '';
+          if (toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', `Expand Day ${dayNum} details`);
+          }
         });
         btnCollapseAll.classList.add('active');
         btnExpandAll.classList.remove('active');
@@ -1061,13 +1093,35 @@ function initTourDetailPage() {
 function toggleDayCard(dayCardEl) {
   const isCollapsed = dayCardEl.classList.toggle('is-collapsed');
   const header = dayCardEl.querySelector('.day-header');
-  const toggleText = dayCardEl.querySelector('.toggle-text');
+  const toggleBtn = dayCardEl.querySelector('.day-toggle-btn');
+  const dayNum = dayCardEl.id ? dayCardEl.id.replace('day-', '') : '';
 
   if (header) {
     header.setAttribute('aria-expanded', !isCollapsed);
   }
-  if (toggleText) {
-    toggleText.textContent = isCollapsed ? 'Expand' : 'Collapse';
+  if (toggleBtn) {
+    toggleBtn.setAttribute('aria-expanded', !isCollapsed);
+    toggleBtn.setAttribute('aria-label', `${isCollapsed ? 'Expand' : 'Collapse'} Day ${dayNum} details`);
+  }
+
+  // Synchronize global Expand/Collapse controls
+  const allCards = document.querySelectorAll('.itinerary-day-card');
+  const totalCards = allCards.length;
+  const collapsedCards = document.querySelectorAll('.itinerary-day-card.is-collapsed').length;
+  const btnExpandAll = document.getElementById('btn-expand-all');
+  const btnCollapseAll = document.getElementById('btn-collapse-all');
+
+  if (btnExpandAll && btnCollapseAll && totalCards > 0) {
+    if (collapsedCards === 0) {
+      btnExpandAll.classList.add('active');
+      btnCollapseAll.classList.remove('active');
+    } else if (collapsedCards === totalCards) {
+      btnCollapseAll.classList.add('active');
+      btnExpandAll.classList.remove('active');
+    } else {
+      btnExpandAll.classList.remove('active');
+      btnCollapseAll.classList.remove('active');
+    }
   }
 }
 
@@ -1428,4 +1482,9 @@ ${payload.requests}
 function escapeHtml(text) {
   if (!text) return '';
   return text.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+function escapeText(text) {
+  if (!text) return '';
+  return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }

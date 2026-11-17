@@ -294,13 +294,35 @@ body.mobile-nav-open {
   }
 
   /* Itinerary Reflow on Mobile */
+  .itinerary-header-bar {
+    padding: 1rem 1.15rem;
+    gap: 1rem;
+  }
+
+  .itinerary-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .itinerary-timeline::before {
     left: 17px;
+    top: 18px;
   }
 
   .itinerary-day-card {
     grid-template-columns: 36px 1fr;
     gap: 1rem;
+  }
+
+  .day-header-top {
+    gap: 0.85rem;
+  }
+
+  .day-toggle-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
   }
 
   .day-marker-node {
