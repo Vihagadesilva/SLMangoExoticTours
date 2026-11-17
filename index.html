@@ -29,6 +29,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -1460,36 +1461,414 @@
     </section>
 
     <!-- ======================================================================
-         10.9 HONEST REVIEWS & TRUST PLACEHOLDER
+         10.9 INTERNATIONAL GUEST REVIEWS SECTION
          ====================================================================== -->
     <section class="section section-bg-cloud" id="reviews">
       <div class="container">
-        <div class="reviews-placeholder-card">
-          <div class="trust-badge-row">
-            <span class="trust-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Verified Operator</span>
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <span class="section-tag">International Perspectives</span>
+          <h2 class="section-title" aria-label="Experiences from Around the World">
+            <span class="mask-line" aria-hidden="true"><span class="mask-line-inner">Experiences from Around the World</span></span>
+          </h2>
+          <span class="accent-line"></span>
+          <p class="section-description">
+            Discover how travellers from across the globe experience Sri Lanka with us — from misty tea highlands and ancient UNESCO fortresses to comfortable private chauffeur journeys and warm local hospitality.
+          </p>
+
+          <!-- Subtle Compliance & Transparency Notice -->
+          <div class="reviews-disclaimer-pill" role="note" aria-label="Demonstration Notice">
+            <svg class="reviews-disclaimer-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Illustrative sample reviews – not verified customer testimonials.</span>
+          </div>
+        </div>
+
+        <!-- Interactive Country / Market Filter Toolbar -->
+        <div class="reviews-filter-bar" role="tablist" aria-label="Filter reviews by country of origin">
+          <button type="button" class="reviews-filter-btn is-active" data-country-filter="all" role="tab" aria-selected="true">
+            All Countries (7)
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="uk" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇬🇧</span> United Kingdom
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="de" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇩🇪</span> Germany
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="in" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇮🇳</span> India
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="au" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇦🇺</span> Australia
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="fr" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇫🇷</span> France
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="ca" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇨🇦</span> Canada
+          </button>
+          <button type="button" class="reviews-filter-btn" data-country-filter="nl" role="tab" aria-selected="false">
+            <span class="flag-icon" aria-hidden="true">🇳🇱</span> Netherlands
+          </button>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="reviews-grid" id="reviews-grid">
+          <!-- 1. UNITED KINGDOM -->
+          <article class="review-card" data-country="uk">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇬🇧</span>
+                  <span class="review-country-name">United Kingdom</span>
+                </div>
+                <h3 class="review-guest-name">Arthur &amp; Eleanor Pendelton</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Transportation Comfort &amp; Chauffeur Excellence</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;Our chauffeur&rsquo;s safe, courteous driving through the winding mountain roads from Kandy to Nuwara Eliya made our journey completely stress-free. The vehicle was immaculate every morning, with cool air-conditioning and plenty of space for our luggage. Exceptional professional care throughout.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: The Golden Pearl of Sri Lanka (14 Days)</span>
+            </div>
+          </article>
+
+          <!-- 2. GERMANY -->
+          <article class="review-card" data-country="de">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇩🇪</span>
+                  <span class="review-country-name">Germany</span>
+                </div>
+                <h3 class="review-guest-name">Dr. Markus &amp; Hanna Weber</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Cultural Heritage &amp; Ancient Architecture</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;Climbing Sigiriya Rock Fortress at sunrise and exploring the ancient Dambulla Cave Temples with our licensed guide brought Sri Lanka&rsquo;s deep history alive. Every hotel transfer was punctual, communication was flawless, and the daily pacing was thoughtful and respectful.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: Cultural Heritage &amp; Ancient Wonders</span>
+            </div>
+          </article>
+
+          <!-- 3. INDIA -->
+          <article class="review-card" data-country="in">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇮🇳</span>
+                  <span class="review-country-name">India</span>
+                </div>
+                <h3 class="review-guest-name">Rajesh &amp; Priya Sundaram</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Personalized Family Travel &amp; Authentic Flavours</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;Travelling with elderly parents and young children required genuine flexibility. The team arranged comfortable vehicle transfers, reliable vegetarian dining options, and gentle scenic walks. The traditional village lunch in Habarana was an absolute highlight for our entire family.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: Bespoke Family Discovery Journey</span>
+            </div>
+          </article>
+
+          <!-- 4. AUSTRALIA -->
+          <article class="review-card" data-country="au">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇦🇺</span>
+                  <span class="review-country-name">Australia</span>
+                </div>
+                <h3 class="review-guest-name">Liam &amp; Chloe Campbell</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Wildlife Safari &amp; Mountain Adventures</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;Seeing wild elephant herds in Udawalawe at dusk and hiking Little Adam&rsquo;s Peak above the morning clouds in Ella exceeded all expectations. Having a dedicated private vehicle allowed us to stop spontaneously whenever we spotted scenic viewpoints and waterfalls.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: Silver Isle Explorer (10 Days)</span>
+            </div>
+          </article>
+
+          <!-- 5. FRANCE -->
+          <article class="review-card" data-country="fr">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇫🇷</span>
+                  <span class="review-country-name">France</span>
+                </div>
+                <h3 class="review-guest-name">Camille &amp; Julien Moreau</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Scenic Train Journey &amp; Coastal Serenity</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;The scenic train journey through emerald tea estates from Nanu Oya to Ella was magical. Our chauffeur met us directly on the station platform with our bags ready. Exploring the colonial architecture of Galle Fort and sunset in Mirissa were truly unforgettable.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: Tea Hills &amp; Golden Southern Coast</span>
+            </div>
+          </article>
+
+          <!-- 6. CANADA -->
+          <article class="review-card" data-country="ca">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇨🇦</span>
+                  <span class="review-country-name">Canada</span>
+                </div>
+                <h3 class="review-guest-name">David &amp; Sarah Tremblay</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Transparent Arrangements &amp; Seamless Coordination</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;From our initial WhatsApp enquiry to our airport departure, every detail was handled with complete clarity. No hidden costs, no hurried detours to tourist shops&mdash;just honest, dependable coordination, superb hospitality, and unforgettable island memories.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: Complete Sri Lanka Grand Odyssey (12 Days)</span>
+            </div>
+          </article>
+
+          <!-- 7. NETHERLANDS -->
+          <article class="review-card" data-country="nl">
+            <div class="review-card-header">
+              <div class="review-guest-meta">
+                <div class="review-country-badge">
+                  <span class="review-flag" aria-hidden="true">🇳🇱</span>
+                  <span class="review-country-name">Netherlands</span>
+                </div>
+                <h3 class="review-guest-name">Bram &amp; Sophie van der Meer</h3>
+                <span class="review-sample-tag">Illustrative Sample Profile</span>
+              </div>
+              <div class="review-rating-block" aria-label="Rated 5 out of 5 stars (Demonstration)">
+                <div class="review-stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="review-rating-label">5.0 / 5.0</span>
+              </div>
+            </div>
+
+            <div class="review-aspect-badge">
+              <span class="review-aspect-dot"></span>
+              <span>Eco-Tourism &amp; Responsible Exploration</span>
+            </div>
+
+            <blockquote class="review-quote">
+              <p>
+                &ldquo;We deeply appreciated the strong emphasis on ethical wildlife observation and conservation-conscious excursions. The boat safari along the Madu River mangroves was peaceful, rich with biodiversity, and conducted with profound respect for the natural environment.&rdquo;
+              </p>
+            </blockquote>
+
+            <div class="review-card-footer">
+              <span class="review-tour-route">Itinerary: Wildlife &amp; Rainforest Expeditions</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Trust & Future Review Verification Portal Card -->
+        <div class="reviews-trust-portal-card">
+          <div class="trust-portal-badges">
+            <span class="trust-portal-pill">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Verified Local Tour Operator</span>
             </span>
-            <span class="trust-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>TripAdvisor Integration Pending</span>
+            <span class="trust-portal-pill">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>TripAdvisor Integration Ready</span>
             </span>
-            <span class="trust-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="trust-portal-pill">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
               <span>Google Reviews Portal Ready</span>
             </span>
           </div>
-
-          <h3 class="h3" style="margin-bottom: 0.85rem;">Honest, Genuine Service Above All</h3>
-          
-          <p style="color:var(--color-text-muted); font-size:0.95rem; line-height:1.7; max-width:640px; margin-left:auto; margin-right:auto; margin-bottom:1.5rem;">
-            We believe that trust is earned through transparent human service rather than fabricated internet badges or generic marketing hype. We are preparing our official Google and TripAdvisor traveller review listings. In the meantime, we are delighted to introduce you directly to our lead chauffeur-guides and discuss your plans in full transparency.
-          </p>
-
-          <a href="contact.html" class="btn btn-primary btn-sm">Speak With Our Tour Director</a>
+          <div class="trust-portal-body">
+            <h3 class="trust-portal-title">Genuine Service &amp; Transparent Standards</h3>
+            <p class="trust-portal-text">
+              We believe that real traveller trust is earned through transparent human care rather than artificial marketing hype. While our official verified Google and TripAdvisor profiles are prepared for incoming season travellers, we warmly invite you to speak directly with our tour director and lead chauffeur-guides to review your travel plans in complete transparency.
+            </p>
+            <div class="trust-portal-actions">
+              <a href="contact.html" class="btn btn-primary btn-sm">Speak With Our Tour Director</a>
+              <a href="tours.html" class="btn btn-navy btn-sm">Explore Tour Packages</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <script>
+      (function () {
+        function initGuestReviews() {
+          var filterBtns = document.querySelectorAll('.reviews-filter-btn');
+          var reviewCards = document.querySelectorAll('#reviews-grid .review-card');
+          if (!filterBtns.length || !reviewCards.length) return;
+
+          filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var target = btn.getAttribute('data-country-filter');
+              filterBtns.forEach(function (b) {
+                b.classList.remove('is-active');
+                b.setAttribute('aria-selected', 'false');
+              });
+              btn.classList.add('is-active');
+              btn.setAttribute('aria-selected', 'true');
+
+              reviewCards.forEach(function (card) {
+                var country = card.getAttribute('data-country');
+                if (target === 'all' || country === target) {
+                  card.classList.remove('is-hidden');
+                  card.style.opacity = '0';
+                  card.style.display = 'flex';
+                  setTimeout(function () { card.style.opacity = '1'; }, 30);
+                } else {
+                  card.classList.add('is-hidden');
+                  card.style.display = 'none';
+                }
+              });
+
+              var grid = document.getElementById('reviews-grid');
+              if (grid) {
+                if (target === 'all') {
+                  grid.classList.remove('is-filtered-single');
+                } else {
+                  grid.classList.add('is-filtered-single');
+                }
+              }
+            });
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initGuestReviews);
+        } else {
+          initGuestReviews();
+        }
+      })();
+    </script>
+
 
    
 

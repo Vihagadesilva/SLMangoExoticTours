@@ -704,9 +704,6 @@ function initTourDetailPage() {
         const galleryItems = day.dayGallery.map((img, idx) => `
           <div class="day-gallery-item ${idx === 0 ? 'featured' : 'secondary'}" onclick="openLightbox('${img.src}', '${escapeHtml(img.caption)}', '${escapeHtml(img.alt)}')" role="button" tabindex="0" aria-label="View photo: ${escapeHtml(img.caption)}">
             <img src="${img.src}" alt="${img.alt}" loading="lazy" width="600" height="375" onerror="this.onerror=null;this.src='assets/images/destinations/sigiriya.jpg';">
-            <div class="day-gallery-overlay">
-              <span class="day-gallery-caption">${img.caption}</span>
-            </div>
           </div>
         `).join('');
 
